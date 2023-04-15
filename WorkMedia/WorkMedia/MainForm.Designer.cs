@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panel_header = new System.Windows.Forms.Panel();
+            this.label_TabHeader = new System.Windows.Forms.Label();
             this.picbox_report = new System.Windows.Forms.PictureBox();
             this.picbox_close = new System.Windows.Forms.PictureBox();
             this.label_WorkMedia = new System.Windows.Forms.Label();
@@ -47,7 +48,6 @@
             this.picbox_home = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.FlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.label_TabHeader = new System.Windows.Forms.Label();
             this.panel_header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picbox_report)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picbox_close)).BeginInit();
@@ -75,6 +75,18 @@
             this.panel_header.Name = "panel_header";
             this.panel_header.Size = new System.Drawing.Size(1000, 70);
             this.panel_header.TabIndex = 0;
+            // 
+            // label_TabHeader
+            // 
+            this.label_TabHeader.BackColor = System.Drawing.Color.Transparent;
+            this.label_TabHeader.Font = new System.Drawing.Font("Impact", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_TabHeader.ForeColor = System.Drawing.Color.LightCoral;
+            this.label_TabHeader.Location = new System.Drawing.Point(3, 17);
+            this.label_TabHeader.Name = "label_TabHeader";
+            this.label_TabHeader.Size = new System.Drawing.Size(241, 36);
+            this.label_TabHeader.TabIndex = 7;
+            this.label_TabHeader.Text = "Tab Header";
+            this.label_TabHeader.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // picbox_report
             // 
@@ -257,18 +269,6 @@
             this.FlowLayoutPanel.Name = "FlowLayoutPanel";
             this.FlowLayoutPanel.Size = new System.Drawing.Size(920, 530);
             this.FlowLayoutPanel.TabIndex = 5;
-            // 
-            // label_TabHeader
-            // 
-            this.label_TabHeader.BackColor = System.Drawing.Color.Transparent;
-            this.label_TabHeader.Font = new System.Drawing.Font("Impact", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_TabHeader.ForeColor = System.Drawing.Color.LightCoral;
-            this.label_TabHeader.Location = new System.Drawing.Point(3, 17);
-            this.label_TabHeader.Name = "label_TabHeader";
-            this.label_TabHeader.Size = new System.Drawing.Size(241, 36);
-            this.label_TabHeader.TabIndex = 7;
-            this.label_TabHeader.Text = "Home";
-            this.label_TabHeader.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // MainForm
             // 

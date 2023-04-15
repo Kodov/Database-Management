@@ -16,6 +16,9 @@ namespace WorkMedia
         public MainForm()
         {
             InitializeComponent();
+
+            // shows home page on launch
+            picbox_home_Click(this, EventArgs.Empty);
         }
 
         // create instances of user controls corresponding to (panel) tab views

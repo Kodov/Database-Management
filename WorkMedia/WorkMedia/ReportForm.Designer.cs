@@ -75,6 +75,7 @@
             this.MaximizeBox = false;
             this.Name = "ReportForm";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
