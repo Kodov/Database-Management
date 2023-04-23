@@ -39,6 +39,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Messaging" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -64,6 +65,12 @@
     <Compile Include="ReportForm.Designer.cs">
       <DependentUpon>ReportForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControlPoll.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlPoll.Designer.cs">
+      <DependentUpon>UserControlPoll.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControlEvent.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -81,12 +88,6 @@
     </Compile>
     <Compile Include="UserControlMessages.Designer.cs">
       <DependentUpon>UserControlMessages.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserControlPoll.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControlPoll.Designer.cs">
-      <DependentUpon>UserControlPoll.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControlPost.cs">
       <SubType>UserControl</SubType>

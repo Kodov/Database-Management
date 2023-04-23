@@ -34,7 +34,7 @@
             this.picbox_report = new System.Windows.Forms.PictureBox();
             this.picbox_close = new System.Windows.Forms.PictureBox();
             this.label_WorkMedia = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel_headerStrip = new System.Windows.Forms.Panel();
             this.panel_tabs = new System.Windows.Forms.Panel();
             this.panel_ActiveTab = new System.Windows.Forms.Panel();
             this.picbox_settings = new System.Windows.Forms.PictureBox();
@@ -70,7 +70,7 @@
             this.panel_header.Controls.Add(this.picbox_report);
             this.panel_header.Controls.Add(this.picbox_close);
             this.panel_header.Controls.Add(this.label_WorkMedia);
-            this.panel_header.Controls.Add(this.panel4);
+            this.panel_header.Controls.Add(this.panel_headerStrip);
             this.panel_header.Location = new System.Drawing.Point(0, 0);
             this.panel_header.Name = "panel_header";
             this.panel_header.Size = new System.Drawing.Size(1000, 70);
@@ -122,13 +122,13 @@
             this.label_WorkMedia.Text = "Work Media";
             this.label_WorkMedia.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel4
+            // panel_headerStrip
             // 
-            this.panel4.BackColor = System.Drawing.Color.Maroon;
-            this.panel4.Location = new System.Drawing.Point(0, 60);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1000, 10);
-            this.panel4.TabIndex = 3;
+            this.panel_headerStrip.BackColor = System.Drawing.Color.Maroon;
+            this.panel_headerStrip.Location = new System.Drawing.Point(0, 60);
+            this.panel_headerStrip.Name = "panel_headerStrip";
+            this.panel_headerStrip.Size = new System.Drawing.Size(1000, 10);
+            this.panel_headerStrip.TabIndex = 3;
             // 
             // panel_tabs
             // 
@@ -306,7 +306,7 @@
 
         private System.Windows.Forms.Panel panel_header;
         private System.Windows.Forms.Panel panel_tabs;
-        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel_headerStrip;
         private System.Windows.Forms.PictureBox picbox_settings;
         private System.Windows.Forms.PictureBox picbox_log;
         private System.Windows.Forms.PictureBox picbox_poll;
