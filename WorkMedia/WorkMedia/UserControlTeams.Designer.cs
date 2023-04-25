@@ -36,6 +36,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.button4 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -51,15 +53,16 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(197, 123);
+            this.textBox1.Location = new System.Drawing.Point(197, 124);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(241, 22);
             this.textBox1.TabIndex = 2;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Brown;
-            this.button1.Location = new System.Drawing.Point(265, 171);
+            this.button1.Location = new System.Drawing.Point(265, 152);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(101, 32);
             this.button1.TabIndex = 3;
@@ -79,7 +82,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(197, 258);
+            this.textBox2.Location = new System.Drawing.Point(197, 190);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(241, 22);
             this.textBox2.TabIndex = 5;
@@ -87,7 +90,7 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.Brown;
-            this.button2.Location = new System.Drawing.Point(265, 313);
+            this.button2.Location = new System.Drawing.Point(265, 218);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(101, 32);
             this.button2.TabIndex = 6;
@@ -96,7 +99,7 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(197, 399);
+            this.textBox3.Location = new System.Drawing.Point(197, 256);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(241, 22);
             this.textBox3.TabIndex = 7;
@@ -104,18 +107,37 @@
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.Brown;
-            this.button3.Location = new System.Drawing.Point(265, 452);
+            this.button3.Location = new System.Drawing.Point(265, 284);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(101, 32);
             this.button3.TabIndex = 8;
             this.button3.Text = "Leave Team";
             this.button3.UseVisualStyleBackColor = false;
             // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(197, 322);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(241, 22);
+            this.textBox4.TabIndex = 9;
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.Brown;
+            this.button4.Location = new System.Drawing.Point(265, 350);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(101, 32);
+            this.button4.TabIndex = 10;
+            this.button4.Text = "View Team";
+            this.button4.UseVisualStyleBackColor = false;
+            // 
             // UserControlTeams
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MistyRose;
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.textBox4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.button2);
@@ -125,7 +147,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.Color.LightCoral;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UserControlTeams";
             this.Size = new System.Drawing.Size(1227, 652);
             this.ResumeLayout(false);
@@ -143,5 +165,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Button button4;
     }
 }

@@ -13,8 +13,9 @@ namespace WorkMedia
     public partial class UserControlTeams : UserControl
     {
         string createTeam = null;
-        string joinTeam;
-        string leaveTeam;
+        string joinTeam = null;
+        string leaveTeam = null;
+        string viewTeam = null;
         public UserControlTeams()
         {
             InitializeComponent();
@@ -33,6 +34,10 @@ namespace WorkMedia
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
             leaveTeam = textBox3.Text;
+        }
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+            viewTeam = textBox3.Text;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -60,9 +65,18 @@ namespace WorkMedia
 
         }
 
+        private void button4_Click(object sender, EventArgs e)
+        {
+            // views the members of a team if the name entered in the text box exists
+            // shows the team members in the text box that shows all of the different teams
+            // back button displayed to go back to the all team view
+
+        }
+
         private void showTeams()
         {
             // show all the teams
         }
+
     }
 }
