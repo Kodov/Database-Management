@@ -16,5 +16,25 @@ namespace WorkMedia
         {
             InitializeComponent();
         }
+
+        private void message_send_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void send_message_text_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Previous_messages_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void friend_list_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
