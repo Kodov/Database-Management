@@ -16,5 +16,30 @@ namespace WorkMedia
         {
             InitializeComponent();
         }
+
+        private void Header_box_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Text_body_box_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Tags_check_list_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Discard_button_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Post_button_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
