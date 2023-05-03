@@ -32,6 +32,11 @@ namespace WorkMedia
         UserControlSettings uc_settings = new UserControlSettings();
         UserControlTeams uc_teams = new UserControlTeams();
 
+        // UC instances for feed views
+        UserControlPollView uc_pollView = new UserControlPollView();
+        UserControlEventView uc_eventView = new UserControlEventView();
+        UserControlPostView uc_postView = new UserControlPostView();
+
         #region Tab Click Operations
         /// <summary>
         /// relocates active tab marker & changes tab header text

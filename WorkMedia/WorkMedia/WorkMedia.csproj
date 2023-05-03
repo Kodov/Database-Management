@@ -65,6 +65,18 @@
     <Compile Include="ReportForm.Designer.cs">
       <DependentUpon>ReportForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControlEventView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlEventView.Designer.cs">
+      <DependentUpon>UserControlEventView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlPollView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlPollView.Designer.cs">
+      <DependentUpon>UserControlPollView.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControlPoll.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -94,6 +106,12 @@
     </Compile>
     <Compile Include="UserControlPost.Designer.cs">
       <DependentUpon>UserControlPost.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlPostView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlPostView.Designer.cs">
+      <DependentUpon>UserControlPostView.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControlSettings.cs">
       <SubType>UserControl</SubType>
@@ -151,6 +169,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlPoll.resx">
       <DependentUpon>UserControlPoll.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlPollView.resx">
+      <DependentUpon>UserControlPollView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlPost.resx">
       <DependentUpon>UserControlPost.cs</DependentUpon>
