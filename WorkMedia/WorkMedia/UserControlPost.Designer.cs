@@ -48,6 +48,7 @@
             this.Header_Label.Size = new System.Drawing.Size(117, 39);
             this.Header_Label.TabIndex = 0;
             this.Header_Label.Text = "Header";
+            this.Header_Label.Click += new System.EventHandler(this.Header_Label_Click);
             // 
             // Header_box
             // 

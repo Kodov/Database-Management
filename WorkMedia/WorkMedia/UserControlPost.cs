@@ -41,5 +41,10 @@ namespace WorkMedia
         {
 
         }
+
+        private void Header_Label_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
