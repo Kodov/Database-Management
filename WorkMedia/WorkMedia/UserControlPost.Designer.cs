@@ -55,7 +55,7 @@
             this.Header_box.Location = new System.Drawing.Point(23, 58);
             this.Header_box.Multiline = true;
             this.Header_box.Name = "Header_box";
-            this.Header_box.Size = new System.Drawing.Size(528, 39);
+            this.Header_box.Size = new System.Drawing.Size(581, 39);
             this.Header_box.TabIndex = 1;
             this.Header_box.TextChanged += new System.EventHandler(this.Header_box_TextChanged);
             // 
@@ -64,7 +64,7 @@
             this.Text_body_box.Location = new System.Drawing.Point(23, 152);
             this.Text_body_box.Multiline = true;
             this.Text_body_box.Name = "Text_body_box";
-            this.Text_body_box.Size = new System.Drawing.Size(528, 337);
+            this.Text_body_box.Size = new System.Drawing.Size(581, 337);
             this.Text_body_box.TabIndex = 2;
             this.Text_body_box.TextChanged += new System.EventHandler(this.Text_body_box_TextChanged);
             // 
@@ -85,9 +85,9 @@
             this.Post_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Post_button.Font = new System.Drawing.Font("Impact", 18F);
             this.Post_button.ForeColor = System.Drawing.Color.LightCoral;
-            this.Post_button.Location = new System.Drawing.Point(768, 446);
+            this.Post_button.Location = new System.Drawing.Point(663, 432);
             this.Post_button.Name = "Post_button";
-            this.Post_button.Size = new System.Drawing.Size(100, 43);
+            this.Post_button.Size = new System.Drawing.Size(100, 58);
             this.Post_button.TabIndex = 4;
             this.Post_button.Text = "Post";
             this.Post_button.UseVisualStyleBackColor = false;
@@ -99,9 +99,9 @@
             this.Discard_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Discard_button.Font = new System.Drawing.Font("Impact", 18F);
             this.Discard_button.ForeColor = System.Drawing.Color.LightCoral;
-            this.Discard_button.Location = new System.Drawing.Point(768, 58);
+            this.Discard_button.Location = new System.Drawing.Point(663, 386);
             this.Discard_button.Name = "Discard_button";
-            this.Discard_button.Size = new System.Drawing.Size(100, 39);
+            this.Discard_button.Size = new System.Drawing.Size(100, 40);
             this.Discard_button.TabIndex = 5;
             this.Discard_button.Text = "Discard Post";
             this.Discard_button.UseVisualStyleBackColor = false;
@@ -120,7 +120,7 @@
             "Update",
             "Alert",
             "Urgent"});
-            this.Tags_check_list.Location = new System.Drawing.Point(609, 58);
+            this.Tags_check_list.Location = new System.Drawing.Point(663, 152);
             this.Tags_check_list.Name = "Tags_check_list";
             this.Tags_check_list.Size = new System.Drawing.Size(121, 139);
             this.Tags_check_list.TabIndex = 6;
@@ -131,7 +131,7 @@
             this.tags.AutoSize = true;
             this.tags.Font = new System.Drawing.Font("Impact", 24F, System.Drawing.FontStyle.Bold);
             this.tags.ForeColor = System.Drawing.Color.LightCoral;
-            this.tags.Location = new System.Drawing.Point(602, 17);
+            this.tags.Location = new System.Drawing.Point(656, 111);
             this.tags.Name = "tags";
             this.tags.Size = new System.Drawing.Size(83, 39);
             this.tags.TabIndex = 7;
@@ -151,7 +151,7 @@
             this.Controls.Add(this.Header_box);
             this.Controls.Add(this.Header_Label);
             this.Name = "UserControlPost";
-            this.Size = new System.Drawing.Size(920, 530);
+            this.Size = new System.Drawing.Size(860, 530);
             this.ResumeLayout(false);
             this.PerformLayout();
 

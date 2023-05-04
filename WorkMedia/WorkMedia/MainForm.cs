@@ -13,12 +13,14 @@ namespace WorkMedia
 {
     public partial class MainForm : Form
     {
+
         public MainForm()
         {
             InitializeComponent();
 
             // shows home page on launch
             picbox_home_Click(this, EventArgs.Empty);
+
         }
 
         // create instances of user controls corresponding to (panel) tab views
@@ -44,6 +46,8 @@ namespace WorkMedia
         /// </summary>
         private void picbox_home_Click(object sender, EventArgs e)
         {
+            picBox_DownArrow.Visible = true;
+            picBox_UpArrow.Visible = true;
             panel_ActiveTab.Location = new Point(3, picbox_home.Location.Y);
             label_TabHeader.Text = "Home";
             FlowLayoutPanel.Controls.Clear();
@@ -52,6 +56,8 @@ namespace WorkMedia
 
         private void picbox_contacts_Click(object sender, EventArgs e)
         {
+            picBox_UpArrow.Visible = false;
+            picBox_DownArrow.Visible = false;
             panel_ActiveTab.Location = new Point(3, picbox_contacts.Location.Y);
             label_TabHeader.Text = "Contacts";
             FlowLayoutPanel.Controls.Clear();
@@ -60,6 +66,8 @@ namespace WorkMedia
 
         private void picbox_teams_Click(object sender, EventArgs e)
         {
+            picBox_UpArrow.Visible = false;
+            picBox_DownArrow.Visible = false;
             panel_ActiveTab.Location = new Point(3, picbox_teams.Location.Y);
             label_TabHeader.Text = "Teams";
             FlowLayoutPanel.Controls.Clear();
@@ -68,6 +76,8 @@ namespace WorkMedia
 
         private void picbox_messages_Click(object sender, EventArgs e)
         {
+            picBox_UpArrow.Visible = false;
+            picBox_DownArrow.Visible = false;
             panel_ActiveTab.Location = new Point(3, picbox_messages.Location.Y);
             label_TabHeader.Text = "Messages";
             FlowLayoutPanel.Controls.Clear();
@@ -76,6 +86,8 @@ namespace WorkMedia
 
         private void picbox_post_Click(object sender, EventArgs e)
         {
+            picBox_UpArrow.Visible = false;
+            picBox_DownArrow.Visible = false;
             panel_ActiveTab.Location = new Point(3, picbox_post.Location.Y);
             label_TabHeader.Text = "Post";
             FlowLayoutPanel.Controls.Clear();
@@ -84,6 +96,8 @@ namespace WorkMedia
 
         private void picbox_event_Click(object sender, EventArgs e)
         {
+            picBox_UpArrow.Visible = false;
+            picBox_DownArrow.Visible = false;
             panel_ActiveTab.Location = new Point(3, picbox_event.Location.Y);
             label_TabHeader.Text = "Event";
             FlowLayoutPanel.Controls.Clear();
@@ -92,6 +106,8 @@ namespace WorkMedia
 
         private void picbox_poll_Click(object sender, EventArgs e)
         {
+            picBox_UpArrow.Visible = false;
+            picBox_DownArrow.Visible = false;
             panel_ActiveTab.Location = new Point(3, picbox_poll.Location.Y);
             label_TabHeader.Text = "Poll";
             FlowLayoutPanel.Controls.Clear();
@@ -100,6 +116,8 @@ namespace WorkMedia
 
         private void picbox_log_Click(object sender, EventArgs e)
         {
+            picBox_UpArrow.Visible = false;
+            picBox_DownArrow.Visible = false;
             panel_ActiveTab.Location = new Point(3, picbox_log.Location.Y);
             label_TabHeader.Text = "Log";
             FlowLayoutPanel.Controls.Clear();
@@ -108,6 +126,8 @@ namespace WorkMedia
 
         private void picbox_settings_Click(object sender, EventArgs e)
         {
+            picBox_UpArrow.Visible = false;
+            picBox_DownArrow.Visible = false;
             panel_ActiveTab.Location = new Point(3, picbox_settings.Location.Y);
             label_TabHeader.Text = "Settings";
             FlowLayoutPanel.Controls.Clear();
@@ -126,6 +146,65 @@ namespace WorkMedia
         {
             ReportForm rf = new ReportForm();
             rf.Show();
+        }
+
+        // backcolor states for up arrow control
+        private void picBox_UpArrow_MouseDown(object sender, MouseEventArgs e)
+        {
+            picBox_UpArrow.BackColor = Color.Maroon;
+        }
+
+        private void picBox_UpArrow_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (picBox_UpArrow.ClientRectangle.Contains(e.Location))
+                picBox_UpArrow.BackColor = Color.Brown;
+            else
+                picBox_UpArrow.BackColor = Color.MistyRose;
+        }
+
+        private void picBox_UpArrow_MouseEnter(object sender, EventArgs e)
+        {
+            picBox_UpArrow.BackColor= Color.Brown;
+        }
+
+        private void picBox_UpArrow_MouseLeave(object sender, EventArgs e)
+        {
+            picBox_UpArrow.BackColor = Color.MistyRose;
+        }
+
+        // backcolor states for down arrow control
+        private void picBox_DownArrow_MouseDown(object sender, MouseEventArgs e)
+        {
+            picBox_DownArrow.BackColor = Color.Maroon;
+        }
+
+        private void picBox_DownArrow_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (picBox_DownArrow.ClientRectangle.Contains(e.Location))
+                picBox_DownArrow.BackColor = Color.Brown;
+            else
+                picBox_DownArrow.BackColor = Color.MistyRose;
+        }
+
+        private void picBox_DownArrow_MouseEnter(object sender, EventArgs e)
+        {
+            picBox_DownArrow.BackColor = Color.Brown;
+        }
+
+        private void picBox_DownArrow_MouseLeave(object sender, EventArgs e)
+        {
+            picBox_DownArrow.BackColor = Color.MistyRose;
+        }
+
+        // arrow boxes refresh user control with next or previous media feed item from database
+        private void picBox_UpArrow_Click(object sender, EventArgs e)
+        {
+            // DB Conn -- traverse table UP
+        }
+
+        private void picBox_DownArrow_Click(object sender, EventArgs e)
+        {
+            // DB Conn -- traverse table DOWN
         }
     }
 }
