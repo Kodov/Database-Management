@@ -57,7 +57,8 @@
             "Log",
             "Settings",
             "Bug Report",
-            "Login"});
+            "Login",
+            "Logout"});
             this.Filters_Check_List.Location = new System.Drawing.Point(634, 86);
             this.Filters_Check_List.Name = "Filters_Check_List";
             this.Filters_Check_List.Size = new System.Drawing.Size(120, 169);
