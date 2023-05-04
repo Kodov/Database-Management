@@ -71,6 +71,12 @@
     <Compile Include="UserControlEventView.Designer.cs">
       <DependentUpon>UserControlEventView.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControlLogin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlLogin.Designer.cs">
+      <DependentUpon>UserControlLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControlPollView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -119,6 +125,12 @@
     <Compile Include="UserControlSettings.Designer.cs">
       <DependentUpon>UserControlSettings.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControlSignup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlSignup.Designer.cs">
+      <DependentUpon>UserControlSignup.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControlTeams.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -164,6 +176,9 @@
     <EmbeddedResource Include="UserControlLog.resx">
       <DependentUpon>UserControlLog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControlLogin.resx">
+      <DependentUpon>UserControlLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControlMessages.resx">
       <DependentUpon>UserControlMessages.cs</DependentUpon>
     </EmbeddedResource>
@@ -178,6 +193,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlSettings.resx">
       <DependentUpon>UserControlSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlSignup.resx">
+      <DependentUpon>UserControlSignup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlTeams.resx">
       <DependentUpon>UserControlTeams.cs</DependentUpon>

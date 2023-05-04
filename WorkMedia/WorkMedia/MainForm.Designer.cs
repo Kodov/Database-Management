@@ -119,7 +119,7 @@
             this.label_WorkMedia.BackColor = System.Drawing.Color.Transparent;
             this.label_WorkMedia.Font = new System.Drawing.Font("Impact", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_WorkMedia.ForeColor = System.Drawing.Color.LightCoral;
-            this.label_WorkMedia.Location = new System.Drawing.Point(353, 0);
+            this.label_WorkMedia.Location = new System.Drawing.Point(351, 0);
             this.label_WorkMedia.Name = "label_WorkMedia";
             this.label_WorkMedia.Size = new System.Drawing.Size(306, 57);
             this.label_WorkMedia.TabIndex = 4;
