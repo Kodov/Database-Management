@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.lbl_PollTitle = new System.Windows.Forms.Label();
             this.PollChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.checkBox_Option1 = new System.Windows.Forms.CheckBox();
@@ -57,20 +57,20 @@
             this.PollChart.BackColor = System.Drawing.Color.Transparent;
             this.PollChart.BackSecondaryColor = System.Drawing.Color.Transparent;
             this.PollChart.BorderlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            chartArea2.Name = "ChartArea1";
-            this.PollChart.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.PollChart.Legends.Add(legend2);
-            this.PollChart.Location = new System.Drawing.Point(384, 109);
+            chartArea1.Name = "ChartArea1";
+            this.PollChart.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.PollChart.Legends.Add(legend1);
+            this.PollChart.Location = new System.Drawing.Point(340, 109);
             this.PollChart.Name = "PollChart";
             this.PollChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Chocolate;
-            series2.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.PollChart.Series.Add(series2);
+            series1.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.PollChart.Series.Add(series1);
             this.PollChart.Size = new System.Drawing.Size(422, 343);
             this.PollChart.TabIndex = 30;
             this.PollChart.Text = "Chart";

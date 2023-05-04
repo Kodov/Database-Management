@@ -194,6 +194,9 @@
     <EmbeddedResource Include="UserControlPost.resx">
       <DependentUpon>UserControlPost.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControlPostView.resx">
+      <DependentUpon>UserControlPostView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControlSettings.resx">
       <DependentUpon>UserControlSettings.cs</DependentUpon>
     </EmbeddedResource>
