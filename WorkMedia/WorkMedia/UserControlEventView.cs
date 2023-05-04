@@ -16,5 +16,40 @@ namespace WorkMedia
         {
             InitializeComponent();
         }
+
+        private void Header_Label_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Event_description_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Attendees_header_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Attendees_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Event_date_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Event_picture_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Attend_event_button_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

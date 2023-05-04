@@ -170,6 +170,9 @@
     <EmbeddedResource Include="UserControlEvent.resx">
       <DependentUpon>UserControlEvent.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControlEventView.resx">
+      <DependentUpon>UserControlEventView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControlHome.resx">
       <DependentUpon>UserControlHome.cs</DependentUpon>
     </EmbeddedResource>
