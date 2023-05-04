@@ -16,5 +16,20 @@ namespace WorkMedia
         {
             InitializeComponent();
         }
+
+        private void Log_text_box_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Filters_Check_List_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void filter_date_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

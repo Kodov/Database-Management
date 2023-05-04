@@ -28,34 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.Delete_Account = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label1
+            // Delete_Account
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(443, 259);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(138, 20);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "SETTINGS PAGE";
+            this.Delete_Account.BackColor = System.Drawing.Color.Brown;
+            this.Delete_Account.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Delete_Account.Font = new System.Drawing.Font("Impact", 18F);
+            this.Delete_Account.ForeColor = System.Drawing.Color.LightCoral;
+            this.Delete_Account.Location = new System.Drawing.Point(690, 428);
+            this.Delete_Account.Name = "Delete_Account";
+            this.Delete_Account.Size = new System.Drawing.Size(170, 43);
+            this.Delete_Account.TabIndex = 7;
+            this.Delete_Account.Text = "Delete Account";
+            this.Delete_Account.UseVisualStyleBackColor = false;
+            this.Delete_Account.Click += new System.EventHandler(this.Delete_Account_Click);
             // 
             // UserControlSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MistyRose;
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.Delete_Account);
             this.Name = "UserControlSettings";
             this.Size = new System.Drawing.Size(860, 530);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button Delete_Account;
     }
 }
