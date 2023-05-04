@@ -199,7 +199,7 @@
             this.Controls.Add(this.txtbox_option2);
             this.Controls.Add(this.txtbox_option1);
             this.Name = "UserControlPoll";
-            this.Size = new System.Drawing.Size(920, 530);
+            this.Size = new System.Drawing.Size(860, 530);
             this.ResumeLayout(false);
             this.PerformLayout();
 

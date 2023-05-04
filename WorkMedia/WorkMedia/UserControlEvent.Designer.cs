@@ -41,7 +41,7 @@
             // 
             // date_Time_Picker
             // 
-            this.date_Time_Picker.Location = new System.Drawing.Point(691, 75);
+            this.date_Time_Picker.Location = new System.Drawing.Point(629, 75);
             this.date_Time_Picker.Name = "date_Time_Picker";
             this.date_Time_Picker.Size = new System.Drawing.Size(200, 20);
             this.date_Time_Picker.TabIndex = 0;
@@ -93,7 +93,7 @@
             this.Post_event_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Post_event_button.Font = new System.Drawing.Font("Impact", 18F);
             this.Post_event_button.ForeColor = System.Drawing.Color.LightCoral;
-            this.Post_event_button.Location = new System.Drawing.Point(791, 463);
+            this.Post_event_button.Location = new System.Drawing.Point(729, 463);
             this.Post_event_button.Name = "Post_event_button";
             this.Post_event_button.Size = new System.Drawing.Size(100, 43);
             this.Post_event_button.TabIndex = 6;
@@ -106,7 +106,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Impact", 24F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.LightCoral;
-            this.label2.Location = new System.Drawing.Point(727, 32);
+            this.label2.Location = new System.Drawing.Point(665, 32);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(164, 39);
             this.label2.TabIndex = 7;
@@ -153,7 +153,7 @@
             this.Controls.Add(this.Header_Label);
             this.Controls.Add(this.date_Time_Picker);
             this.Name = "UserControlEvent";
-            this.Size = new System.Drawing.Size(920, 530);
+            this.Size = new System.Drawing.Size(860, 530);
             this.ResumeLayout(false);
             this.PerformLayout();
 

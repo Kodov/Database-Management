@@ -48,6 +48,8 @@
             this.picbox_home = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.FlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.picBox_UpArrow = new System.Windows.Forms.PictureBox();
+            this.picBox_DownArrow = new System.Windows.Forms.PictureBox();
             this.panel_header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picbox_report)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picbox_close)).BeginInit();
@@ -61,6 +63,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.picbox_teams)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picbox_contacts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picbox_home)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBox_UpArrow)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBox_DownArrow)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_header
@@ -267,8 +271,41 @@
             // 
             this.FlowLayoutPanel.Location = new System.Drawing.Point(79, 70);
             this.FlowLayoutPanel.Name = "FlowLayoutPanel";
-            this.FlowLayoutPanel.Size = new System.Drawing.Size(920, 530);
+            this.FlowLayoutPanel.Size = new System.Drawing.Size(860, 530);
             this.FlowLayoutPanel.TabIndex = 5;
+            // 
+            // picBox_UpArrow
+            // 
+            this.picBox_UpArrow.BackColor = System.Drawing.Color.MistyRose;
+            this.picBox_UpArrow.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.picBox_UpArrow.Image = ((System.Drawing.Image)(resources.GetObject("picBox_UpArrow.Image")));
+            this.picBox_UpArrow.Location = new System.Drawing.Point(942, 270);
+            this.picBox_UpArrow.Name = "picBox_UpArrow";
+            this.picBox_UpArrow.Size = new System.Drawing.Size(55, 55);
+            this.picBox_UpArrow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBox_UpArrow.TabIndex = 6;
+            this.picBox_UpArrow.TabStop = false;
+            this.picBox_UpArrow.Click += new System.EventHandler(this.picBox_UpArrow_Click);
+            this.picBox_UpArrow.MouseDown += new System.Windows.Forms.MouseEventHandler(this.picBox_UpArrow_MouseDown);
+            this.picBox_UpArrow.MouseEnter += new System.EventHandler(this.picBox_UpArrow_MouseEnter);
+            this.picBox_UpArrow.MouseLeave += new System.EventHandler(this.picBox_UpArrow_MouseLeave);
+            this.picBox_UpArrow.MouseUp += new System.Windows.Forms.MouseEventHandler(this.picBox_UpArrow_MouseUp);
+            // 
+            // picBox_DownArrow
+            // 
+            this.picBox_DownArrow.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.picBox_DownArrow.Image = ((System.Drawing.Image)(resources.GetObject("picBox_DownArrow.Image")));
+            this.picBox_DownArrow.Location = new System.Drawing.Point(942, 331);
+            this.picBox_DownArrow.Name = "picBox_DownArrow";
+            this.picBox_DownArrow.Size = new System.Drawing.Size(55, 54);
+            this.picBox_DownArrow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBox_DownArrow.TabIndex = 7;
+            this.picBox_DownArrow.TabStop = false;
+            this.picBox_DownArrow.Click += new System.EventHandler(this.picBox_DownArrow_Click);
+            this.picBox_DownArrow.MouseDown += new System.Windows.Forms.MouseEventHandler(this.picBox_DownArrow_MouseDown);
+            this.picBox_DownArrow.MouseEnter += new System.EventHandler(this.picBox_DownArrow_MouseEnter);
+            this.picBox_DownArrow.MouseLeave += new System.EventHandler(this.picBox_DownArrow_MouseLeave);
+            this.picBox_DownArrow.MouseUp += new System.Windows.Forms.MouseEventHandler(this.picBox_DownArrow_MouseUp);
             // 
             // MainForm
             // 
@@ -276,6 +313,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MistyRose;
             this.ClientSize = new System.Drawing.Size(1000, 600);
+            this.Controls.Add(this.picBox_DownArrow);
+            this.Controls.Add(this.picBox_UpArrow);
             this.Controls.Add(this.FlowLayoutPanel);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel_tabs);
@@ -298,6 +337,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.picbox_teams)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picbox_contacts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picbox_home)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBox_UpArrow)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBox_DownArrow)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -323,6 +364,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.FlowLayoutPanel FlowLayoutPanel;
         private System.Windows.Forms.Label label_TabHeader;
+        private System.Windows.Forms.PictureBox picBox_UpArrow;
+        private System.Windows.Forms.PictureBox picBox_DownArrow;
     }
 }
 

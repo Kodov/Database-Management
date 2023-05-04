@@ -66,7 +66,7 @@
             this.label_TabHeader.BackColor = System.Drawing.Color.Transparent;
             this.label_TabHeader.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Bold);
             this.label_TabHeader.ForeColor = System.Drawing.Color.LightCoral;
-            this.label_TabHeader.Location = new System.Drawing.Point(638, 16);
+            this.label_TabHeader.Location = new System.Drawing.Point(644, 15);
             this.label_TabHeader.Name = "label_TabHeader";
             this.label_TabHeader.Size = new System.Drawing.Size(134, 19);
             this.label_TabHeader.TabIndex = 16;
@@ -101,9 +101,9 @@
             this.friend_list.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.friend_list.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.friend_list.FormattingEnabled = true;
-            this.friend_list.Location = new System.Drawing.Point(642, 38);
+            this.friend_list.Location = new System.Drawing.Point(648, 37);
             this.friend_list.Name = "friend_list";
-            this.friend_list.Size = new System.Drawing.Size(259, 21);
+            this.friend_list.Size = new System.Drawing.Size(209, 21);
             this.friend_list.TabIndex = 13;
             this.friend_list.SelectedIndexChanged += new System.EventHandler(this.friend_list_SelectedIndexChanged);
             // 
@@ -133,7 +133,7 @@
             this.Controls.Add(this.friend_list);
             this.Controls.Add(this.message_send);
             this.Name = "UserControlMessages";
-            this.Size = new System.Drawing.Size(920, 530);
+            this.Size = new System.Drawing.Size(860, 530);
             this.ResumeLayout(false);
 
         }

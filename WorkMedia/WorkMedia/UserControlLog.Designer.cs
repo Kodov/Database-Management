@@ -48,7 +48,7 @@
             this.BackColor = System.Drawing.Color.MistyRose;
             this.Controls.Add(this.label1);
             this.Name = "UserControlLog";
-            this.Size = new System.Drawing.Size(920, 530);
+            this.Size = new System.Drawing.Size(860, 530);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.lbl_PollTitle = new System.Windows.Forms.Label();
             this.PollChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.checkBox_Option1 = new System.Windows.Forms.CheckBox();
@@ -46,7 +46,7 @@
             this.lbl_PollTitle.AutoSize = true;
             this.lbl_PollTitle.Font = new System.Drawing.Font("Impact", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_PollTitle.ForeColor = System.Drawing.Color.Brown;
-            this.lbl_PollTitle.Location = new System.Drawing.Point(101, 99);
+            this.lbl_PollTitle.Location = new System.Drawing.Point(82, 77);
             this.lbl_PollTitle.Name = "lbl_PollTitle";
             this.lbl_PollTitle.Size = new System.Drawing.Size(95, 29);
             this.lbl_PollTitle.TabIndex = 29;
@@ -57,20 +57,20 @@
             this.PollChart.BackColor = System.Drawing.Color.Transparent;
             this.PollChart.BackSecondaryColor = System.Drawing.Color.Transparent;
             this.PollChart.BorderlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            chartArea1.Name = "ChartArea1";
-            this.PollChart.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.PollChart.Legends.Add(legend1);
-            this.PollChart.Location = new System.Drawing.Point(362, 143);
+            chartArea2.Name = "ChartArea1";
+            this.PollChart.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.PollChart.Legends.Add(legend2);
+            this.PollChart.Location = new System.Drawing.Point(384, 109);
             this.PollChart.Name = "PollChart";
             this.PollChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Chocolate;
-            series1.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.PollChart.Series.Add(series1);
+            series2.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.PollChart.Series.Add(series2);
             this.PollChart.Size = new System.Drawing.Size(422, 343);
             this.PollChart.TabIndex = 30;
             this.PollChart.Text = "Chart";
@@ -80,7 +80,7 @@
             this.checkBox_Option1.AutoSize = true;
             this.checkBox_Option1.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox_Option1.ForeColor = System.Drawing.Color.IndianRed;
-            this.checkBox_Option1.Location = new System.Drawing.Point(106, 155);
+            this.checkBox_Option1.Location = new System.Drawing.Point(87, 133);
             this.checkBox_Option1.Name = "checkBox_Option1";
             this.checkBox_Option1.Size = new System.Drawing.Size(90, 27);
             this.checkBox_Option1.TabIndex = 31;
@@ -93,7 +93,7 @@
             this.checkBox_Option2.AutoSize = true;
             this.checkBox_Option2.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox_Option2.ForeColor = System.Drawing.Color.IndianRed;
-            this.checkBox_Option2.Location = new System.Drawing.Point(106, 228);
+            this.checkBox_Option2.Location = new System.Drawing.Point(87, 206);
             this.checkBox_Option2.Name = "checkBox_Option2";
             this.checkBox_Option2.Size = new System.Drawing.Size(93, 27);
             this.checkBox_Option2.TabIndex = 32;
@@ -106,7 +106,7 @@
             this.checkBox_Option3.AutoSize = true;
             this.checkBox_Option3.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox_Option3.ForeColor = System.Drawing.Color.IndianRed;
-            this.checkBox_Option3.Location = new System.Drawing.Point(106, 301);
+            this.checkBox_Option3.Location = new System.Drawing.Point(87, 279);
             this.checkBox_Option3.Name = "checkBox_Option3";
             this.checkBox_Option3.Size = new System.Drawing.Size(93, 27);
             this.checkBox_Option3.TabIndex = 33;
@@ -119,7 +119,7 @@
             this.checkBox_Option4.AutoSize = true;
             this.checkBox_Option4.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox_Option4.ForeColor = System.Drawing.Color.IndianRed;
-            this.checkBox_Option4.Location = new System.Drawing.Point(106, 374);
+            this.checkBox_Option4.Location = new System.Drawing.Point(87, 352);
             this.checkBox_Option4.Name = "checkBox_Option4";
             this.checkBox_Option4.Size = new System.Drawing.Size(92, 27);
             this.checkBox_Option4.TabIndex = 34;
@@ -132,7 +132,7 @@
             this.checkBox_Option5.AutoSize = true;
             this.checkBox_Option5.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox_Option5.ForeColor = System.Drawing.Color.IndianRed;
-            this.checkBox_Option5.Location = new System.Drawing.Point(106, 447);
+            this.checkBox_Option5.Location = new System.Drawing.Point(87, 425);
             this.checkBox_Option5.Name = "checkBox_Option5";
             this.checkBox_Option5.Size = new System.Drawing.Size(93, 27);
             this.checkBox_Option5.TabIndex = 35;
@@ -153,7 +153,7 @@
             this.Controls.Add(this.PollChart);
             this.Controls.Add(this.lbl_PollTitle);
             this.Name = "UserControlPollView";
-            this.Size = new System.Drawing.Size(920, 530);
+            this.Size = new System.Drawing.Size(860, 530);
             ((System.ComponentModel.ISupportInitialize)(this.PollChart)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
