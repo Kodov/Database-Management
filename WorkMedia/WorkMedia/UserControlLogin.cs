@@ -42,7 +42,7 @@ namespace WorkMedia
                 if (count > 0)
                 {
                     // allows admin access to LOG tab view
-                    if (username == "Admin" && password == "Admin")
+                    if (username == "Admin" && password == "Admin" || username == "admin" && password == "admin")
                         mainForm.isAdmin = true;
 
                     mainForm.isAuthorized = true;
