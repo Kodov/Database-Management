@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.Delete_Account = new System.Windows.Forms.Button();
+            this.Logout = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Delete_Account
@@ -45,11 +46,26 @@
             this.Delete_Account.UseVisualStyleBackColor = false;
             this.Delete_Account.Click += new System.EventHandler(this.Delete_Account_Click);
             // 
+            // Logout
+            // 
+            this.Logout.BackColor = System.Drawing.Color.Brown;
+            this.Logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Logout.Font = new System.Drawing.Font("Impact", 18F);
+            this.Logout.ForeColor = System.Drawing.Color.LightCoral;
+            this.Logout.Location = new System.Drawing.Point(690, 354);
+            this.Logout.Name = "Logout";
+            this.Logout.Size = new System.Drawing.Size(170, 43);
+            this.Logout.TabIndex = 8;
+            this.Logout.Text = "Logout";
+            this.Logout.UseVisualStyleBackColor = false;
+            this.Logout.Click += new System.EventHandler(this.Logout_Click);
+            // 
             // UserControlSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MistyRose;
+            this.Controls.Add(this.Logout);
             this.Controls.Add(this.Delete_Account);
             this.Name = "UserControlSettings";
             this.Size = new System.Drawing.Size(860, 530);
@@ -60,5 +76,6 @@
         #endregion
 
         private System.Windows.Forms.Button Delete_Account;
+        private System.Windows.Forms.Button Logout;
     }
 }

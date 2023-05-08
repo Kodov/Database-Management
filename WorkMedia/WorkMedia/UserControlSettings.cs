@@ -31,5 +31,12 @@ namespace WorkMedia
             }
 
         }
+
+        private void Logout_Click(object sender, EventArgs e)
+        {
+            MainForm mainForm = Application.OpenForms.OfType<MainForm>().FirstOrDefault();
+            mainForm.isAuthorized = false;
+            mainForm.picbox_home_Click(this, EventArgs.Empty);
+        }
     }
 }
