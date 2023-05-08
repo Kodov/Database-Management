@@ -83,6 +83,7 @@
             this.btn_publish.TabIndex = 26;
             this.btn_publish.Text = "Publish";
             this.btn_publish.UseVisualStyleBackColor = false;
+            this.btn_publish.Click += new System.EventHandler(this.btn_publish_Click);
             // 
             // label6
             // 

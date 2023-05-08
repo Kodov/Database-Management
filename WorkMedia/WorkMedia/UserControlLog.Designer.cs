@@ -34,17 +34,17 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView_Log = new System.Windows.Forms.DataGridView();
-            this.finalprojectDataSet = new WorkMedia.finalprojectDataSet();
-            this.logsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.logsTableAdapter = new WorkMedia.finalprojectDataSetTableAdapters.LogsTableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.useridDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.actionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.loginDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.logoutDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.logsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.finalprojectDataSet = new WorkMedia.finalprojectDataSet();
+            this.logsTableAdapter = new WorkMedia.finalprojectDataSetTableAdapters.LogsTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Log)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.finalprojectDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.finalprojectDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // filter_date
@@ -73,7 +73,7 @@
             "Logout"});
             this.Filters_Check_List.Location = new System.Drawing.Point(627, 86);
             this.Filters_Check_List.Name = "Filters_Check_List";
-            this.Filters_Check_List.Size = new System.Drawing.Size(120, 169);
+            this.Filters_Check_List.Size = new System.Drawing.Size(120, 184);
             this.Filters_Check_List.TabIndex = 1;
             this.Filters_Check_List.SelectedIndexChanged += new System.EventHandler(this.Filters_Check_List_SelectedIndexChanged);
             // 
@@ -115,20 +115,6 @@
             this.dataGridView_Log.Size = new System.Drawing.Size(544, 445);
             this.dataGridView_Log.TabIndex = 11;
             // 
-            // finalprojectDataSet
-            // 
-            this.finalprojectDataSet.DataSetName = "finalprojectDataSet";
-            this.finalprojectDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // logsBindingSource
-            // 
-            this.logsBindingSource.DataMember = "Logs";
-            this.logsBindingSource.DataSource = this.finalprojectDataSet;
-            // 
-            // logsTableAdapter
-            // 
-            this.logsTableAdapter.ClearBeforeFill = true;
-            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
@@ -160,6 +146,20 @@
             this.logoutDataGridViewTextBoxColumn.HeaderText = "logout";
             this.logoutDataGridViewTextBoxColumn.Name = "logoutDataGridViewTextBoxColumn";
             // 
+            // logsBindingSource
+            // 
+            this.logsBindingSource.DataMember = "Logs";
+            this.logsBindingSource.DataSource = this.finalprojectDataSet;
+            // 
+            // finalprojectDataSet
+            // 
+            this.finalprojectDataSet.DataSetName = "finalprojectDataSet";
+            this.finalprojectDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // logsTableAdapter
+            // 
+            this.logsTableAdapter.ClearBeforeFill = true;
+            // 
             // UserControlLog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -174,8 +174,8 @@
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Size = new System.Drawing.Size(860, 530);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Log)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.finalprojectDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.logsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.finalprojectDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

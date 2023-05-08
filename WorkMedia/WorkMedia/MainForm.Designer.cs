@@ -362,10 +362,10 @@
         private System.Windows.Forms.PictureBox picbox_close;
         private System.Windows.Forms.Panel panel_ActiveTab;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.FlowLayoutPanel FlowLayoutPanel;
         private System.Windows.Forms.Label label_TabHeader;
         private System.Windows.Forms.PictureBox picBox_UpArrow;
         private System.Windows.Forms.PictureBox picBox_DownArrow;
+        public System.Windows.Forms.FlowLayoutPanel FlowLayoutPanel;
     }
 }
 

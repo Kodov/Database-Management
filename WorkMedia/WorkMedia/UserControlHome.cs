@@ -19,6 +19,9 @@ namespace WorkMedia
 
         MainForm mf;
 
-
+        private void btn_loadFeed_Click(object sender, EventArgs e)
+        {
+            //TODO: GET FIRST ITEM FOR PAGE? OR LEAVE IT UP TO ARROW CLICKS
+        }
     }
 }

@@ -89,6 +89,7 @@
             this.btn_createAccount.TabIndex = 37;
             this.btn_createAccount.Text = "Create Account";
             this.btn_createAccount.UseVisualStyleBackColor = false;
+            this.btn_createAccount.Click += new System.EventHandler(this.btn_createAccount_Click);
             // 
             // txtbox_LastName
             // 
@@ -148,6 +149,7 @@
             this.btn_login.TabIndex = 42;
             this.btn_login.Text = "Login";
             this.btn_login.UseVisualStyleBackColor = false;
+            this.btn_login.Click += new System.EventHandler(this.btn_login_Click);
             // 
             // UserControlSignup
             // 

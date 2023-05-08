@@ -85,6 +85,7 @@
             this.btn_login.TabIndex = 33;
             this.btn_login.Text = "Login";
             this.btn_login.UseVisualStyleBackColor = false;
+            this.btn_login.Click += new System.EventHandler(this.btn_login_Click);
             // 
             // btn_createAccount
             // 
@@ -98,6 +99,7 @@
             this.btn_createAccount.TabIndex = 34;
             this.btn_createAccount.Text = "Create Account";
             this.btn_createAccount.UseVisualStyleBackColor = false;
+            this.btn_createAccount.Click += new System.EventHandler(this.btn_createAccount_Click);
             // 
             // label1
             // 
