@@ -22,6 +22,10 @@ namespace WorkMedia
 
         private void btn_publish_Click(object sender, EventArgs e)
         {
+            MainForm mainForm = Application.OpenForms.OfType<MainForm>().FirstOrDefault();
+            string user_id = null;
+            //user_id = mainForm.GetCurrentUser(user_id); //TODO - check if this is getting the current instance of the username var?
+
             string pollTitle = txtbox_pollTitle.Text;
             string option1 = txtbox_option1.Text;
             string option2 = txtbox_option2.Text;
@@ -41,7 +45,7 @@ namespace WorkMedia
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         // Set parameter values
-                        command.Parameters.AddWithValue("@user_id", 1); // TODO: get variable holding current user id
+                        command.Parameters.AddWithValue("@user_id", user_id);
                         command.Parameters.AddWithValue("@title", pollTitle);
                         command.Parameters.AddWithValue("@option1", option1);
                         command.Parameters.AddWithValue("@option2", option2);
@@ -72,6 +76,14 @@ namespace WorkMedia
                     connection.Close();
                 }
             }
+        }
+
+        private void btn_check_Click(object sender, EventArgs e)
+        {
+            MainForm mainForm = Application.OpenForms.OfType<MainForm>().FirstOrDefault();
+            string user_id = null;
+            //user_id = mainForm.GetCurrentUser(user_id);
+            MessageBox.Show(user_id);
         }
     }
 }

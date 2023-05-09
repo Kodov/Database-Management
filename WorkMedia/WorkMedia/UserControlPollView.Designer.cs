@@ -56,7 +56,7 @@
             // 
             this.PollChart.BackColor = System.Drawing.Color.Transparent;
             this.PollChart.BackSecondaryColor = System.Drawing.Color.Transparent;
-            this.PollChart.BorderlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.PollChart.BorderlineColor = System.Drawing.Color.Transparent;
             chartArea1.Name = "ChartArea1";
             this.PollChart.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";

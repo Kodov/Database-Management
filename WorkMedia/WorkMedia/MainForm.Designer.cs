@@ -50,6 +50,7 @@
             this.FlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.picBox_UpArrow = new System.Windows.Forms.PictureBox();
             this.picBox_DownArrow = new System.Windows.Forms.PictureBox();
+            this.btn_check = new System.Windows.Forms.Button();
             this.panel_header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picbox_report)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picbox_close)).BeginInit();
@@ -307,12 +308,23 @@
             this.picBox_DownArrow.MouseLeave += new System.EventHandler(this.picBox_DownArrow_MouseLeave);
             this.picBox_DownArrow.MouseUp += new System.Windows.Forms.MouseEventHandler(this.picBox_DownArrow_MouseUp);
             // 
+            // btn_check
+            // 
+            this.btn_check.Location = new System.Drawing.Point(942, 161);
+            this.btn_check.Name = "btn_check";
+            this.btn_check.Size = new System.Drawing.Size(54, 23);
+            this.btn_check.TabIndex = 8;
+            this.btn_check.Text = "check";
+            this.btn_check.UseVisualStyleBackColor = true;
+            this.btn_check.Click += new System.EventHandler(this.btn_check_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MistyRose;
             this.ClientSize = new System.Drawing.Size(1000, 600);
+            this.Controls.Add(this.btn_check);
             this.Controls.Add(this.picBox_DownArrow);
             this.Controls.Add(this.picBox_UpArrow);
             this.Controls.Add(this.FlowLayoutPanel);
@@ -366,6 +378,7 @@
         private System.Windows.Forms.PictureBox picBox_UpArrow;
         private System.Windows.Forms.PictureBox picBox_DownArrow;
         public System.Windows.Forms.FlowLayoutPanel FlowLayoutPanel;
+        private System.Windows.Forms.Button btn_check;
     }
 }
 

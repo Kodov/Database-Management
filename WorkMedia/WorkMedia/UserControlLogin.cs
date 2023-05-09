@@ -10,15 +10,23 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
+
+
 namespace WorkMedia
 {
     public partial class UserControlLogin : UserControl
     {
         public string username;
         public string password;
+
         public UserControlLogin()
         {
             InitializeComponent();
+        }
+
+        public void SetUsername(string username)
+        {
+            this.username = username;
         }
 
         private void btn_login_Click(object sender, EventArgs e)
@@ -26,6 +34,8 @@ namespace WorkMedia
             MainForm mainForm = Application.OpenForms.OfType<MainForm>().FirstOrDefault();
             username = txtbox_username.Text;
             password = txtbox_password.Text;
+            mainForm.SetCurrentUserInfo(username);
+            mainForm.getUserId();
 
             string connectionString = "Data Source=localhost;Initial Catalog=finalproject;Integrated Security=True";
             using (SqlConnection connection = new SqlConnection(connectionString))

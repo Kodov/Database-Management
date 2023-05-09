@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Reflection.Emit;
@@ -13,6 +14,7 @@ namespace WorkMedia
 {
     public partial class MainForm : Form
     {
+
 
         public MainForm()
         {
@@ -37,9 +39,60 @@ namespace WorkMedia
         public UserControlSignup uc_signup = new UserControlSignup();
 
         public bool isAuthorized = false;
-        string username = uc_login.username;
         string password = uc_login.password;
         public bool isAdmin;
+        string currentUsername;
+        int currentUserId;
+
+        // used to send instance reference of MainForm username to user controls
+        public void SetCurrentUserInfo(string username)
+        {
+            this.currentUsername = username;
+        }
+
+        public void getUserId()
+        {
+            string connectionString = "Data Source=localhost;Initial Catalog=finalproject;Integrated Security=True";
+            string username = currentUsername;
+            int user_id = 0;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+
+                    string query = "SELECT id FROM users WHERE username=@username";
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@username", username);
+
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                user_id = reader.GetInt32(reader.GetOrdinal("id"));
+                            }
+                            else
+                            {
+                                throw new Exception("Username not found");
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error: " + ex.Message);
+                }
+                finally
+                {
+                    connection.Close();
+                }
+            }
+
+            currentUserId = user_id;
+        }
 
         // UC instances for feed views
         UserControlPollView uc_pollView = new UserControlPollView();
@@ -271,6 +324,13 @@ namespace WorkMedia
         private void picBox_DownArrow_Click(object sender, EventArgs e)
         {
             // DB Conn -- traverse table DOWN
+        }
+
+        private void btn_check_Click(object sender, EventArgs e)
+        {
+            getUserId();
+            MessageBox.Show(currentUsername);
+            MessageBox.Show("id: " + currentUserId);
         }
     }
 }

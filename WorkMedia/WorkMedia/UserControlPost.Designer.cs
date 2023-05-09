@@ -34,8 +34,8 @@
             this.text_body = new System.Windows.Forms.Label();
             this.Post_button = new System.Windows.Forms.Button();
             this.Discard_button = new System.Windows.Forms.Button();
-            this.Tags_check_list = new System.Windows.Forms.CheckedListBox();
             this.tags = new System.Windows.Forms.Label();
+            this.Filters_Check_List = new System.Windows.Forms.CheckedListBox();
             this.SuspendLayout();
             // 
             // Header_Label
@@ -61,7 +61,7 @@
             // 
             // Text_body_box
             // 
-            this.Text_body_box.Location = new System.Drawing.Point(23, 152);
+            this.Text_body_box.Location = new System.Drawing.Point(27, 152);
             this.Text_body_box.Multiline = true;
             this.Text_body_box.Name = "Text_body_box";
             this.Text_body_box.Size = new System.Drawing.Size(581, 337);
@@ -107,10 +107,21 @@
             this.Discard_button.UseVisualStyleBackColor = false;
             this.Discard_button.Click += new System.EventHandler(this.Discard_button_Click);
             // 
-            // Tags_check_list
+            // tags
             // 
-            this.Tags_check_list.FormattingEnabled = true;
-            this.Tags_check_list.Items.AddRange(new object[] {
+            this.tags.AutoSize = true;
+            this.tags.Font = new System.Drawing.Font("Impact", 24F, System.Drawing.FontStyle.Bold);
+            this.tags.ForeColor = System.Drawing.Color.LightCoral;
+            this.tags.Location = new System.Drawing.Point(645, 110);
+            this.tags.Name = "tags";
+            this.tags.Size = new System.Drawing.Size(83, 39);
+            this.tags.TabIndex = 7;
+            this.tags.Text = "Tags";
+            // 
+            // Filters_Check_List
+            // 
+            this.Filters_Check_List.FormattingEnabled = true;
+            this.Filters_Check_List.Items.AddRange(new object[] {
             "TO-DO",
             "Discussion",
             "HR",
@@ -120,30 +131,19 @@
             "Update",
             "Alert",
             "Urgent"});
-            this.Tags_check_list.Location = new System.Drawing.Point(663, 152);
-            this.Tags_check_list.Name = "Tags_check_list";
-            this.Tags_check_list.Size = new System.Drawing.Size(121, 139);
-            this.Tags_check_list.TabIndex = 6;
-            this.Tags_check_list.SelectedIndexChanged += new System.EventHandler(this.Tags_check_list_SelectedIndexChanged);
-            // 
-            // tags
-            // 
-            this.tags.AutoSize = true;
-            this.tags.Font = new System.Drawing.Font("Impact", 24F, System.Drawing.FontStyle.Bold);
-            this.tags.ForeColor = System.Drawing.Color.LightCoral;
-            this.tags.Location = new System.Drawing.Point(656, 111);
-            this.tags.Name = "tags";
-            this.tags.Size = new System.Drawing.Size(83, 39);
-            this.tags.TabIndex = 7;
-            this.tags.Text = "Tags";
+            this.Filters_Check_List.Location = new System.Drawing.Point(652, 152);
+            this.Filters_Check_List.Name = "Filters_Check_List";
+            this.Filters_Check_List.Size = new System.Drawing.Size(120, 139);
+            this.Filters_Check_List.TabIndex = 17;
+            this.Filters_Check_List.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.Filters_Check_List_ItemCheck);
             // 
             // UserControlPost
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MistyRose;
+            this.Controls.Add(this.Filters_Check_List);
             this.Controls.Add(this.tags);
-            this.Controls.Add(this.Tags_check_list);
             this.Controls.Add(this.Discard_button);
             this.Controls.Add(this.Post_button);
             this.Controls.Add(this.text_body);
@@ -165,7 +165,7 @@
         private System.Windows.Forms.Label text_body;
         private System.Windows.Forms.Button Post_button;
         private System.Windows.Forms.Button Discard_button;
-        private System.Windows.Forms.CheckedListBox Tags_check_list;
         private System.Windows.Forms.Label tags;
+        private System.Windows.Forms.CheckedListBox Filters_Check_List;
     }
 }
