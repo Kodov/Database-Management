@@ -17,10 +17,61 @@ namespace WorkMedia
     {
         string text = null;
         private readonly string connString = "Data Source=localhost;Initial Catalog=finalproject;Integrated Security=True";
-        int id = 1;
+        int currentUserId;
+        string currentUsername;
         public UserControlContacts()
         {
             InitializeComponent();
+        }
+
+        public void SetCurrentUserInfo(string username)
+        {
+            this.currentUsername = username;
+        }
+
+
+        public void getUserId()
+        {
+            string connectionString = "Data Source=localhost;Initial Catalog=finalproject;Integrated Security=True";
+            string username = currentUsername;
+            int user_id = 0;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+
+                    string query = "SELECT id FROM users WHERE username=@username";
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@username", username);
+
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                user_id = reader.GetInt32(reader.GetOrdinal("id"));
+                            }
+                            else
+                            {
+                                throw new Exception("Username not found");
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error: " + ex.Message);
+                }
+                finally
+                {
+                    connection.Close();
+                }
+            }
+
+            currentUserId = user_id;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -33,57 +84,72 @@ namespace WorkMedia
             //    text = null;
             // }
             // 
-            string user_id = null;
+
 
             using (SqlConnection connection = new SqlConnection(connString))
             {
                 try
                 {
                     connection.Open();
-
-                    string numRows = "SELECT COUNT(usernames) FROM users";
-                    SqlCommand com = new SqlCommand(numRows, connection);
-                    int rowCount = (int)com.ExecuteScalar();
-
-                    string stringVal = "SELECT usernames from users";
-                    SqlCommand com2 = new SqlCommand(stringVal, connection);
-
-                    SqlDataReader reader = com2.ExecuteReader();
-                    while (reader.Read())
+                               
+                    string query = ("INSERT INTO FRIENDS (user_id, friend) " +
+                                    "VALUES (user_id, friend)");
+                    
+                    
+                    using (SqlCommand command = new SqlCommand(query, connection))     
                     {
-                        for (int i = 0; i < rowCount; i++)
+
+                        if (dataGridView1.SelectedRows.Count > 0) // check if any row is selected
                         {
-                            if (reader.GetValue(i).ToString() == text)
-                            {
-                                // string query2 = ("Select id from users where username = ");
-                                string query = ("INSERT INTO FRIENDS (user_id, friend) " +
-                                "VALUES (user_id, friend)");
-                                using (SqlCommand command = new SqlCommand(query, connection))
-                                {
-                                
-                                    command.Parameters.AddWithValue("user_id", user_id);
-                                    command.Parameters.AddWithValue("friend", text);
+                            // Get the currently selected row
+                            DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
 
-                                    int rowsAffected = command.ExecuteNonQuery();
+                            // Retrieve the value of the "username" column from the selected row
+                            string username = selectedRow.Cells["username"].Value.ToString();
 
-                                    if (rowsAffected > 0)
-                                    {
-                                        MessageBox.Show("Friend added successfully!");
-                                        id++;
-                                    }
-                                    else
-                                    {
-                                        MessageBox.Show("Freind request failed!");
-                                    }
+                            
 
-                                }
+                            // Do something with the username value
 
-                            }
+                            command.Parameters.AddWithValue("user_id", currentUserId);
+
+                            command.Parameters.AddWithValue("friend", username);
+
                         }
 
 
+                        
+
+                                 
+                        int rowsAffected = command.ExecuteNonQuery();
+
+                                
+                        if (rowsAffected > 0)
+                               
+                        {
+                                  
+                            MessageBox.Show("Friend added successfully!");
+                              
+                                  
+                        }
+                                   
+                        else
+                        
+                        {
+                        
+                            MessageBox.Show("Freind request failed!");
+                            
+                        }
+
+                        
                     }
+
+                            
                 }
+
+
+                    
+                
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error: " + ex.Message);
@@ -95,10 +161,6 @@ namespace WorkMedia
             }
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            text = AddFriendsBox.Text;
-        }
 
         private void showAll()
         {
