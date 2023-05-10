@@ -13,44 +13,43 @@ namespace WorkMedia
 {
     public partial class UserControlPost : UserControl
     {
+        public int currentUserId;
+
         public UserControlPost()
         {
             InitializeComponent();
         }
 
-        private void Header_box_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Text_body_box_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Tags_check_list_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void Discard_button_Click(object sender, EventArgs e)
         {
+            // clears all fields on click or after successfully posting
+            Text_body_box.Clear();
+            Header_box.Clear();
+
+            for (int i = 0; i < Filters_Check_List.Items.Count; i++)
+            {
+                Filters_Check_List.SetItemChecked(i, false);
+            }
 
         }
 
         private void Post_button_Click(object sender, EventArgs e)
         {
+            MainForm mainForm = Application.OpenForms.OfType<MainForm>().FirstOrDefault();
+            mainForm.SetCurrentUserIdPost();
+            int user_id = currentUserId;
+
             //MainForm mainForm = Application.OpenForms.OfType<MainForm>().FirstOrDefault();
             //string userId = MainForm.username; //TODO - check if this is getting the current instance of the username var?
             string title = Header_box.Text;
             string body = Text_body_box.Text;
-            string tag = Filters_Check_List.CheckedItems.ToString();
+            string tag = Filters_Check_List.SelectedItem.ToString();
 
             // Create a connection string with the appropriate credentials
             string connectionString = "Data Source=localhost;Initial Catalog=finalproject;Integrated Security=True";
 
             // Define the SQL query with parameter placeholders
-            string sqlQuery = "INSERT INTO posts (user_id, title, body, tag) VALUES (@userId, @title, @body, @tag)";
+            string sqlQuery = "INSERT INTO posts (user_id, title, body, tag) VALUES (@user_id, @title, @body, @tag)";
 
             // Create a new SqlConnection using the connection string
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -62,20 +61,26 @@ namespace WorkMedia
                 using (SqlCommand command = new SqlCommand(sqlQuery, connection))
                 {
                     // Add parameter values to the SqlCommand
-                    //command.Parameters.AddWithValue("@userId", userId);
+                    command.Parameters.AddWithValue("@user_id", user_id);
                     command.Parameters.AddWithValue("@title", title);
                     command.Parameters.AddWithValue("@body", body);
                     command.Parameters.AddWithValue("@tag", tag);
 
                     // Execute the SQL command
-                    command.ExecuteNonQuery();
+                    // Execute the command
+                    int rowsAffected = command.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("Poll created successfully!");
+                        Discard_button_Click(this, EventArgs.Empty);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Poll creation failed!");
+                    }
                 }
             }
-        }
-
-        private void Header_Label_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void Filters_Check_List_ItemCheck(object sender, ItemCheckEventArgs e)

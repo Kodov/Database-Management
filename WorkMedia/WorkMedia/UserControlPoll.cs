@@ -14,18 +14,29 @@ namespace WorkMedia
     public partial class UserControlPoll : UserControl
     {
         private readonly string connString = "Data Source=localhost;Initial Catalog=finalproject;Integrated Security=True";
+        public int currentUserId;
 
         public UserControlPoll()
         {
             InitializeComponent();
         }
 
+        private void Discard()
+        {
+            txtbox_pollTitle.Clear();
+            txtbox_option1.Clear();
+            txtbox_option2.Clear();
+            txtbox_option3.Clear();
+            txtbox_option4.Clear();
+            txtbox_option5.Clear();
+        }
+
         private void btn_publish_Click(object sender, EventArgs e)
         {
             MainForm mainForm = Application.OpenForms.OfType<MainForm>().FirstOrDefault();
-            string user_id = null;
-            //user_id = mainForm.GetCurrentUser(user_id); //TODO - check if this is getting the current instance of the username var?
+            mainForm.SetCurrentUserIdPoll();
 
+            int user_id = currentUserId;
             string pollTitle = txtbox_pollTitle.Text;
             string option1 = txtbox_option1.Text;
             string option2 = txtbox_option2.Text;
@@ -60,6 +71,7 @@ namespace WorkMedia
                         if (rowsAffected > 0)
                         {
                             MessageBox.Show("Poll created successfully!");
+                            Discard();
                         }
                         else
                         {
@@ -76,14 +88,6 @@ namespace WorkMedia
                     connection.Close();
                 }
             }
-        }
-
-        private void btn_check_Click(object sender, EventArgs e)
-        {
-            MainForm mainForm = Application.OpenForms.OfType<MainForm>().FirstOrDefault();
-            string user_id = null;
-            //user_id = mainForm.GetCurrentUser(user_id);
-            MessageBox.Show(user_id);
         }
     }
 }

@@ -14,6 +14,8 @@ namespace WorkMedia
 {
     public partial class UserControlEvent : UserControl
     {
+        public int currentUserId;
+
         public UserControlEvent()
         {
             InitializeComponent();
@@ -31,7 +33,11 @@ namespace WorkMedia
 
         private void Post_event_button_Click(object sender, EventArgs e)
         {
+            MainForm mainForm = Application.OpenForms.OfType<MainForm>().FirstOrDefault();
+            mainForm.SetCurrentUserIdEvent();
+            int user_id = currentUserId;
 
+            // TODO: send event info to events table
         }
 
         private void date_Time_Picker_ValueChanged(object sender, EventArgs e)
@@ -43,6 +49,7 @@ namespace WorkMedia
         {
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
             //openFileDialog1.Filter = "Image Files|.png;.jpg;*.img";
+            // TODO: find a way so only these file types can be chosen ^
 
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {

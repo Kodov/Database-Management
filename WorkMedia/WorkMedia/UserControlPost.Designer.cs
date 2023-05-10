@@ -48,7 +48,6 @@
             this.Header_Label.Size = new System.Drawing.Size(117, 39);
             this.Header_Label.TabIndex = 0;
             this.Header_Label.Text = "Header";
-            this.Header_Label.Click += new System.EventHandler(this.Header_Label_Click);
             // 
             // Header_box
             // 
@@ -57,7 +56,6 @@
             this.Header_box.Name = "Header_box";
             this.Header_box.Size = new System.Drawing.Size(581, 39);
             this.Header_box.TabIndex = 1;
-            this.Header_box.TextChanged += new System.EventHandler(this.Header_box_TextChanged);
             // 
             // Text_body_box
             // 
@@ -66,7 +64,6 @@
             this.Text_body_box.Name = "Text_body_box";
             this.Text_body_box.Size = new System.Drawing.Size(581, 337);
             this.Text_body_box.TabIndex = 2;
-            this.Text_body_box.TextChanged += new System.EventHandler(this.Text_body_box_TextChanged);
             // 
             // text_body
             // 

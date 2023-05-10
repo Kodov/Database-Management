@@ -42,7 +42,6 @@
             this.txtbox_option3 = new System.Windows.Forms.TextBox();
             this.txtbox_option2 = new System.Windows.Forms.TextBox();
             this.txtbox_option1 = new System.Windows.Forms.TextBox();
-            this.btn_check = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // panel2
@@ -181,22 +180,11 @@
             this.txtbox_option1.Size = new System.Drawing.Size(193, 20);
             this.txtbox_option1.TabIndex = 16;
             // 
-            // btn_check
-            // 
-            this.btn_check.Location = new System.Drawing.Point(644, 266);
-            this.btn_check.Name = "btn_check";
-            this.btn_check.Size = new System.Drawing.Size(75, 23);
-            this.btn_check.TabIndex = 30;
-            this.btn_check.Text = "check";
-            this.btn_check.UseVisualStyleBackColor = true;
-            this.btn_check.Click += new System.EventHandler(this.btn_check_Click);
-            // 
             // UserControlPoll
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MistyRose;
-            this.Controls.Add(this.btn_check);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtbox_pollTitle);
@@ -234,6 +222,5 @@
         private System.Windows.Forms.TextBox txtbox_option3;
         private System.Windows.Forms.TextBox txtbox_option2;
         private System.Windows.Forms.TextBox txtbox_option1;
-        private System.Windows.Forms.Button btn_check;
     }
 }

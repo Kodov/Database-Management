@@ -45,9 +45,21 @@ namespace WorkMedia
         int currentUserId;
 
         // used to send instance reference of MainForm username to user controls
-        public void SetCurrentUserInfo(string username)
+        public void SetCurrentUsername(string username)
         {
             this.currentUsername = username;
+        }
+        public void SetCurrentUserIdPoll()
+        {
+            uc_poll.currentUserId = currentUserId;
+        }
+        public void SetCurrentUserIdPost()
+        {
+            uc_post.currentUserId = currentUserId;
+        }
+        public void SetCurrentUserIdEvent()
+        {
+            uc_event.currentUserId = currentUserId;
         }
 
         public void getUserId()
@@ -231,7 +243,7 @@ namespace WorkMedia
                 }
                 else
                 {
-                    MessageBox.Show("Admin Privilege Required");
+                    MessageBox.Show("Admin Status Required");
                 }
             }
             else
@@ -324,13 +336,6 @@ namespace WorkMedia
         private void picBox_DownArrow_Click(object sender, EventArgs e)
         {
             // DB Conn -- traverse table DOWN
-        }
-
-        private void btn_check_Click(object sender, EventArgs e)
-        {
-            getUserId();
-            MessageBox.Show(currentUsername);
-            MessageBox.Show("id: " + currentUserId);
         }
     }
 }
