@@ -34,7 +34,7 @@ namespace WorkMedia
             MainForm mainForm = Application.OpenForms.OfType<MainForm>().FirstOrDefault();
             username = txtbox_username.Text;
             password = txtbox_password.Text;
-            mainForm.SetCurrentUserInfo(username);
+            mainForm.SetCurrentUsername(username);
             mainForm.getUserId();
 
             string connectionString = "Data Source=localhost;Initial Catalog=finalproject;Integrated Security=True";

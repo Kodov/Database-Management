@@ -35,8 +35,6 @@
             this.Event_description = new System.Windows.Forms.TextBox();
             this.Post_event_button = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.Image_upload = new System.Windows.Forms.Button();
-            this.file_label = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // date_Time_Picker
@@ -112,39 +110,11 @@
             this.label2.TabIndex = 7;
             this.label2.Text = "Event Date";
             // 
-            // Image_upload
-            // 
-            this.Image_upload.BackColor = System.Drawing.Color.Brown;
-            this.Image_upload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Image_upload.Font = new System.Drawing.Font("Impact", 18F);
-            this.Image_upload.ForeColor = System.Drawing.Color.LightCoral;
-            this.Image_upload.Location = new System.Drawing.Point(36, 463);
-            this.Image_upload.Name = "Image_upload";
-            this.Image_upload.Size = new System.Drawing.Size(160, 43);
-            this.Image_upload.TabIndex = 8;
-            this.Image_upload.Text = "Image Upload";
-            this.Image_upload.UseVisualStyleBackColor = false;
-            this.Image_upload.Click += new System.EventHandler(this.Image_upload_Click);
-            // 
-            // file_label
-            // 
-            this.file_label.AutoSize = true;
-            this.file_label.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.file_label.ForeColor = System.Drawing.Color.LightCoral;
-            this.file_label.Location = new System.Drawing.Point(202, 472);
-            this.file_label.Name = "file_label";
-            this.file_label.Size = new System.Drawing.Size(80, 20);
-            this.file_label.TabIndex = 9;
-            this.file_label.Text = "File Name";
-            this.file_label.Visible = false;
-            // 
             // UserControlEvent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MistyRose;
-            this.Controls.Add(this.file_label);
-            this.Controls.Add(this.Image_upload);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.Post_event_button);
             this.Controls.Add(this.Event_description);
@@ -168,7 +138,5 @@
         private System.Windows.Forms.TextBox Event_description;
         private System.Windows.Forms.Button Post_event_button;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button Image_upload;
-        private System.Windows.Forms.Label file_label;
     }
 }

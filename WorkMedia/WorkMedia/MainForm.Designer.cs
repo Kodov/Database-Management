@@ -50,7 +50,7 @@
             this.FlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.picBox_UpArrow = new System.Windows.Forms.PictureBox();
             this.picBox_DownArrow = new System.Windows.Forms.PictureBox();
-            this.btn_check = new System.Windows.Forms.Button();
+            this.btn_loadFeed = new System.Windows.Forms.Button();
             this.panel_header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picbox_report)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picbox_close)).BeginInit();
@@ -308,15 +308,19 @@
             this.picBox_DownArrow.MouseLeave += new System.EventHandler(this.picBox_DownArrow_MouseLeave);
             this.picBox_DownArrow.MouseUp += new System.Windows.Forms.MouseEventHandler(this.picBox_DownArrow_MouseUp);
             // 
-            // btn_check
+            // btn_loadFeed
             // 
-            this.btn_check.Location = new System.Drawing.Point(942, 161);
-            this.btn_check.Name = "btn_check";
-            this.btn_check.Size = new System.Drawing.Size(54, 23);
-            this.btn_check.TabIndex = 8;
-            this.btn_check.Text = "check";
-            this.btn_check.UseVisualStyleBackColor = true;
-            this.btn_check.Click += new System.EventHandler(this.btn_check_Click);
+            this.btn_loadFeed.BackColor = System.Drawing.Color.Brown;
+            this.btn_loadFeed.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_loadFeed.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_loadFeed.ForeColor = System.Drawing.Color.LightCoral;
+            this.btn_loadFeed.Location = new System.Drawing.Point(943, 128);
+            this.btn_loadFeed.Name = "btn_loadFeed";
+            this.btn_loadFeed.Size = new System.Drawing.Size(50, 84);
+            this.btn_loadFeed.TabIndex = 27;
+            this.btn_loadFeed.Text = "Load Feed";
+            this.btn_loadFeed.UseVisualStyleBackColor = false;
+            this.btn_loadFeed.Click += new System.EventHandler(this.btn_loadFeed_Click);
             // 
             // MainForm
             // 
@@ -324,7 +328,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MistyRose;
             this.ClientSize = new System.Drawing.Size(1000, 600);
-            this.Controls.Add(this.btn_check);
+            this.Controls.Add(this.btn_loadFeed);
             this.Controls.Add(this.picBox_DownArrow);
             this.Controls.Add(this.picBox_UpArrow);
             this.Controls.Add(this.FlowLayoutPanel);
@@ -378,7 +382,7 @@
         private System.Windows.Forms.PictureBox picBox_UpArrow;
         private System.Windows.Forms.PictureBox picBox_DownArrow;
         public System.Windows.Forms.FlowLayoutPanel FlowLayoutPanel;
-        private System.Windows.Forms.Button btn_check;
+        private System.Windows.Forms.Button btn_loadFeed;
     }
 }
 
