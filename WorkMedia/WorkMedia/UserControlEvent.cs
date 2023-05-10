@@ -20,7 +20,6 @@ namespace WorkMedia
         string filePath;
         string fileName;
         string getfilePath;
-        Image image;
 
         public UserControlEvent()
         {
@@ -31,8 +30,7 @@ namespace WorkMedia
         {
             Event_name.Clear();
             Event_description.Clear();
-            image.Dispose();
-            file_label.Text = string.Empty;
+            //file_label.Text = string.Empty;
         }
 
         private void Event_name_TextChanged(object sender, EventArgs e)
@@ -56,7 +54,6 @@ namespace WorkMedia
             string title = Event_name.Text;
             string description = Event_description.Text;
             string date = date_Time_Picker.Value.ToString("yyyy-MM-dd");
-            image = Image.FromFile(getfilePath);
 
             string connectionString = "Data Source=localhost;Initial Catalog=finalproject;Integrated Security=True";
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -64,8 +61,8 @@ namespace WorkMedia
                 try
                 {
                     connection.Open();
-                    string query = "Insert INTO events ( title, date, image, description, user_id, created) " +
-                        "VALUES ( @title, @date, @image, @description, @user_id, @created)";
+                    string query = "Insert INTO events ( title, date, description, user_id, created) " +
+                        "VALUES ( @title, @date, @description, @user_id, @created)";
 
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
@@ -73,7 +70,6 @@ namespace WorkMedia
                         command.Parameters.AddWithValue("@title", title);
                         command.Parameters.AddWithValue("@description", description);
                         command.Parameters.AddWithValue("@date", date);
-                        command.Parameters.AddWithValue("@image", image);
                         command.Parameters.AddWithValue("@user_id", user_id);
                         command.Parameters.AddWithValue("@created", DateTime.Now);
 
@@ -107,6 +103,7 @@ namespace WorkMedia
 
         }
 
+        /*
         private void Image_upload_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
@@ -123,6 +120,6 @@ namespace WorkMedia
                 file_label.Text = "Selected File: " + fileName;
                 file_label.Visible = true;
             }
-        }
+        }*/
     }
 }
