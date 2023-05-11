@@ -51,6 +51,9 @@
             this.picBox_UpArrow = new System.Windows.Forms.PictureBox();
             this.picBox_DownArrow = new System.Windows.Forms.PictureBox();
             this.btn_loadFeed = new System.Windows.Forms.Button();
+            this.checkbox_posts = new System.Windows.Forms.CheckBox();
+            this.checkbox_polls = new System.Windows.Forms.CheckBox();
+            this.checkbox_Events = new System.Windows.Forms.CheckBox();
             this.panel_header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picbox_report)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picbox_close)).BeginInit();
@@ -322,12 +325,51 @@
             this.btn_loadFeed.UseVisualStyleBackColor = false;
             this.btn_loadFeed.Click += new System.EventHandler(this.btn_loadFeed_Click);
             // 
+            // checkbox_posts
+            // 
+            this.checkbox_posts.AutoSize = true;
+            this.checkbox_posts.Location = new System.Drawing.Point(942, 453);
+            this.checkbox_posts.Name = "checkbox_posts";
+            this.checkbox_posts.Size = new System.Drawing.Size(52, 17);
+            this.checkbox_posts.TabIndex = 28;
+            this.checkbox_posts.Text = "Posts";
+            this.checkbox_posts.UseVisualStyleBackColor = true;
+            this.checkbox_posts.CheckedChanged += new System.EventHandler(this.checkbox_posts_CheckedChanged);
+            this.checkbox_posts.Click += new System.EventHandler(this.checkbox_posts_Click);
+            // 
+            // checkbox_polls
+            // 
+            this.checkbox_polls.AutoSize = true;
+            this.checkbox_polls.Location = new System.Drawing.Point(942, 476);
+            this.checkbox_polls.Name = "checkbox_polls";
+            this.checkbox_polls.Size = new System.Drawing.Size(48, 17);
+            this.checkbox_polls.TabIndex = 29;
+            this.checkbox_polls.Text = "Polls";
+            this.checkbox_polls.UseVisualStyleBackColor = true;
+            this.checkbox_polls.CheckedChanged += new System.EventHandler(this.checkbox_polls_CheckedChanged);
+            this.checkbox_polls.Click += new System.EventHandler(this.checkbox_polls_Click);
+            // 
+            // checkbox_Events
+            // 
+            this.checkbox_Events.AutoSize = true;
+            this.checkbox_Events.Location = new System.Drawing.Point(942, 499);
+            this.checkbox_Events.Name = "checkbox_Events";
+            this.checkbox_Events.Size = new System.Drawing.Size(59, 17);
+            this.checkbox_Events.TabIndex = 30;
+            this.checkbox_Events.Text = "Events";
+            this.checkbox_Events.UseVisualStyleBackColor = true;
+            this.checkbox_Events.CheckedChanged += new System.EventHandler(this.checkbox_Events_CheckedChanged);
+            this.checkbox_Events.Click += new System.EventHandler(this.checkbox_Events_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MistyRose;
             this.ClientSize = new System.Drawing.Size(1000, 600);
+            this.Controls.Add(this.checkbox_Events);
+            this.Controls.Add(this.checkbox_polls);
+            this.Controls.Add(this.checkbox_posts);
             this.Controls.Add(this.btn_loadFeed);
             this.Controls.Add(this.picBox_DownArrow);
             this.Controls.Add(this.picBox_UpArrow);
@@ -356,6 +398,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBox_UpArrow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_DownArrow)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -383,6 +426,9 @@
         private System.Windows.Forms.PictureBox picBox_DownArrow;
         public System.Windows.Forms.FlowLayoutPanel FlowLayoutPanel;
         private System.Windows.Forms.Button btn_loadFeed;
+        private System.Windows.Forms.CheckBox checkbox_posts;
+        private System.Windows.Forms.CheckBox checkbox_polls;
+        private System.Windows.Forms.CheckBox checkbox_Events;
     }
 }
 

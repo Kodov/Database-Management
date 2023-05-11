@@ -52,9 +52,9 @@
             this.Header_Label.ForeColor = System.Drawing.Color.LightCoral;
             this.Header_Label.Location = new System.Drawing.Point(29, 32);
             this.Header_Label.Name = "Header_Label";
-            this.Header_Label.Size = new System.Drawing.Size(178, 39);
+            this.Header_Label.Size = new System.Drawing.Size(117, 39);
             this.Header_Label.TabIndex = 2;
-            this.Header_Label.Text = "Event Name";
+            this.Header_Label.Text = "Header";
             // 
             // Event_name
             // 
@@ -72,9 +72,9 @@
             this.label1.ForeColor = System.Drawing.Color.LightCoral;
             this.label1.Location = new System.Drawing.Point(29, 135);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(263, 39);
+            this.label1.Size = new System.Drawing.Size(180, 39);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Event Description";
+            this.label1.Text = "Description";
             // 
             // Event_description
             // 
@@ -104,7 +104,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Impact", 24F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.LightCoral;
-            this.label2.Location = new System.Drawing.Point(665, 32);
+            this.label2.Location = new System.Drawing.Point(622, 32);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(164, 39);
             this.label2.TabIndex = 7;

@@ -72,9 +72,9 @@
             this.text_body.ForeColor = System.Drawing.Color.LightCoral;
             this.text_body.Location = new System.Drawing.Point(20, 110);
             this.text_body.Name = "text_body";
-            this.text_body.Size = new System.Drawing.Size(74, 39);
+            this.text_body.Size = new System.Drawing.Size(180, 39);
             this.text_body.TabIndex = 3;
-            this.text_body.Text = "Text";
+            this.text_body.Text = "Description";
             // 
             // Post_button
             // 

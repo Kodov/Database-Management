@@ -61,8 +61,8 @@ namespace WorkMedia
                 try
                 {
                     connection.Open();
-                    string query = "Insert INTO events ( title, date, description, user_id, created) " +
-                        "VALUES ( @title, @date, @description, @user_id, @created)";
+                    string query = "Insert INTO events (title, date, description, user_id, created) " +
+                        "VALUES (@title, @date, @description, @user_id, @created)";
 
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
@@ -101,6 +101,11 @@ namespace WorkMedia
         private void date_Time_Picker_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(currentUserId.ToString());
         }
 
         /*

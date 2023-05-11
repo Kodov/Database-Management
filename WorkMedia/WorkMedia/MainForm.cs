@@ -44,6 +44,11 @@ namespace WorkMedia
         string currentUsername;
         int currentUserId;
 
+        // lists storing the three categories of home feed (posts, polls, events)
+        List<string[]> postList = new List<string[]>();
+        List<string[]> pollList = new List<string[]>();
+        List<string[]> eventList = new List<string[]>();
+
         // used to send instance reference of MainForm username to user controls
         public void SetCurrentUsername(string username)
         {
@@ -120,6 +125,10 @@ namespace WorkMedia
         {
             if (!isAuthorized)
             {
+                btn_loadFeed.Visible = false;
+                checkbox_Events.Visible = false;
+                checkbox_polls.Visible = false;
+                checkbox_posts.Visible = false;
                 picBox_DownArrow.Visible = false;
                 picBox_UpArrow.Visible = false;
                 panel_ActiveTab.Location = new Point(3, picbox_home.Location.Y);
@@ -129,6 +138,10 @@ namespace WorkMedia
             }
             else
             {
+                btn_loadFeed.Visible = true;
+                checkbox_Events.Visible = true;
+                checkbox_polls.Visible = true;
+                checkbox_posts.Visible = true;
                 picBox_DownArrow.Visible = true;
                 picBox_UpArrow.Visible = true;
                 panel_ActiveTab.Location = new Point(3, picbox_home.Location.Y);
@@ -142,6 +155,10 @@ namespace WorkMedia
         {
             if (isAuthorized)
             {
+                btn_loadFeed.Visible = false;
+                checkbox_Events.Visible = false;
+                checkbox_polls.Visible = false;
+                checkbox_posts.Visible = false;
                 picBox_UpArrow.Visible = false;
                 picBox_DownArrow.Visible = false;
                 panel_ActiveTab.Location = new Point(3, picbox_contacts.Location.Y);
@@ -157,6 +174,10 @@ namespace WorkMedia
         {
             if (isAuthorized)
             {
+                btn_loadFeed.Visible = false;
+                checkbox_Events.Visible = false;
+                checkbox_polls.Visible = false;
+                checkbox_posts.Visible = false;
                 picBox_UpArrow.Visible = false;
                 picBox_DownArrow.Visible = false;
                 panel_ActiveTab.Location = new Point(3, picbox_teams.Location.Y);
@@ -172,6 +193,10 @@ namespace WorkMedia
         {
             if (isAuthorized)
             {
+                btn_loadFeed.Visible = false;
+                checkbox_Events.Visible = false;
+                checkbox_polls.Visible = false;
+                checkbox_posts.Visible = false;
                 picBox_UpArrow.Visible = false;
                 picBox_DownArrow.Visible = false;
                 panel_ActiveTab.Location = new Point(3, picbox_messages.Location.Y);
@@ -187,6 +212,10 @@ namespace WorkMedia
         {
             if (isAuthorized)
             {
+                btn_loadFeed.Visible = false;
+                checkbox_Events.Visible = false;
+                checkbox_polls.Visible = false;
+                checkbox_posts.Visible = false;
                 picBox_UpArrow.Visible = false;
                 picBox_DownArrow.Visible = false;
                 panel_ActiveTab.Location = new Point(3, picbox_post.Location.Y);
@@ -202,6 +231,10 @@ namespace WorkMedia
         {
             if (isAuthorized)
             {
+                btn_loadFeed.Visible = false;
+                checkbox_Events.Visible = false;
+                checkbox_polls.Visible = false;
+                checkbox_posts.Visible = false;
                 picBox_UpArrow.Visible = false;
                 picBox_DownArrow.Visible = false;
                 panel_ActiveTab.Location = new Point(3, picbox_event.Location.Y);
@@ -217,6 +250,10 @@ namespace WorkMedia
         {
             if (isAuthorized)
             {
+                btn_loadFeed.Visible = false;
+                checkbox_Events.Visible = false;
+                checkbox_polls.Visible = false;
+                checkbox_posts.Visible = false;
                 picBox_UpArrow.Visible = false;
                 picBox_DownArrow.Visible = false;
                 panel_ActiveTab.Location = new Point(3, picbox_poll.Location.Y);
@@ -234,6 +271,10 @@ namespace WorkMedia
             {
                 if (isAdmin)
                 {
+                    btn_loadFeed.Visible = false;
+                    checkbox_Events.Visible = false;
+                    checkbox_polls.Visible = false;
+                    checkbox_posts.Visible = false;
                     picBox_UpArrow.Visible = false;
                     picBox_DownArrow.Visible = false;
                     panel_ActiveTab.Location = new Point(3, picbox_log.Location.Y);
@@ -254,6 +295,10 @@ namespace WorkMedia
         {
             if (isAuthorized)
             {
+                btn_loadFeed.Visible = false;
+                checkbox_Events.Visible = false;
+                checkbox_polls.Visible = false;
+                checkbox_posts.Visible = false;
                 picBox_UpArrow.Visible = false;
                 picBox_DownArrow.Visible = false;
                 panel_ActiveTab.Location = new Point(3, picbox_settings.Location.Y);
@@ -340,7 +385,198 @@ namespace WorkMedia
 
         private void btn_loadFeed_Click(object sender, EventArgs e)
         {
+            if (checkbox_Events.Checked == false && checkbox_polls.Checked == false && checkbox_posts.Checked == false)
+            {
+                MessageBox.Show("Select a category from below before loading feed");
+            }
+            else
+            {
+                btn_loadFeed.Visible = false;
 
+                if (checkbox_Events.Checked) // show event view
+                {
+                    LoadEvents();
+                    FlowLayoutPanel.Controls.Clear();
+                    FlowLayoutPanel.Controls.Add(uc_eventView);
+                }
+                else if(checkbox_polls.Checked) // show poll view
+                {
+                    LoadPolls();
+                    FlowLayoutPanel.Controls.Clear();
+                    FlowLayoutPanel.Controls.Add(uc_pollView);
+                }
+                else // show post view
+                {
+                    LoadPosts();
+                    FlowLayoutPanel.Controls.Clear();
+                    FlowLayoutPanel.Controls.Add(uc_postView);
+                }
+            }
+        }
+
+        private void LoadPosts()
+        {
+            // clears all items to reload the list
+            postList.Clear();
+
+            // Create a connection to the SQL database
+            string connectionString = "Data Source=localhost;Initial Catalog=finalproject;Integrated Security=True";
+            SqlConnection connection = new SqlConnection(connectionString);
+
+            // Create a SQL command to retrieve data from the posts table
+            string commandText = "SELECT title, body, tag, likes FROM posts ORDER BY created DESC";
+            SqlCommand command = new SqlCommand(commandText, connection);
+
+            // Open the database connection
+            connection.Open();
+
+            // Execute the command and store data in list
+            SqlDataReader reader = command.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    string[] post = new string[4];
+                    post[0] = reader.GetString(0);              // title
+                    post[1] = reader.GetString(1);              // body
+                    post[2] = reader.GetString(2);              // tag
+                    post[3] = reader.GetInt32(3).ToString();    // likes
+                    postList.Add(post);
+                }
+            }
+            else
+                MessageBox.Show("No feed available from this category");
+
+
+            // Close the data reader and the database connection
+            reader.Close();
+            connection.Close();
+        }
+
+        private void LoadPolls()
+        {
+            // clears all items to reload the list
+            pollList.Clear();
+
+            // Create a connection to the SQL database
+            string connectionString = "Data Source=localhost;Initial Catalog=finalproject;Integrated Security=True";
+            SqlConnection connection = new SqlConnection(connectionString);
+
+            // Create a SQL command to retrieve data from the posts table
+            string commandText = "SELECT title, option1, option2, option3, option4, option5, vote_option1, vote_option2, vote_option3, vote_option4, vote_option5 " +
+                                 "FROM polls ORDER BY created DESC";
+            SqlCommand command = new SqlCommand(commandText, connection);
+
+            // Open the database connection
+            connection.Open();
+
+            // Execute the command and store data in list
+            SqlDataReader reader = command.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    string[] poll = new string[11];
+                    poll[0] = reader.GetString(0);              // title
+                    poll[1] = reader.GetString(1);              // option1
+                    poll[2] = reader.GetString(2);              // option2
+                    poll[3] = reader.GetString(3);              // option3
+                    poll[4] = reader.GetString(4);              // option4
+                    poll[5] = reader.GetString(5);              // option5
+                    poll[6] = reader.GetInt32(6).ToString();    // vote_option1
+                    poll[7] = reader.GetInt32(7).ToString();    // vote_option2
+                    poll[8] = reader.GetInt32(8).ToString();    // vote_option3
+                    poll[9] = reader.GetInt32(9).ToString();    // vote_option4
+                    poll[10] = reader.GetInt32(10).ToString();  // vote_option5
+                    pollList.Add(poll);
+                }
+            }
+            else
+                MessageBox.Show("No feed available from this category");
+
+            // Close the data reader and the database connection
+            reader.Close();
+            connection.Close();
+        }
+
+        private void LoadEvents()
+        {
+            // clears all items to reload the list
+            eventList.Clear();
+
+            // Create a connection to the SQL database
+            string connectionString = "Data Source=localhost;Initial Catalog=finalproject;Integrated Security=True";
+            SqlConnection connection = new SqlConnection(connectionString);
+
+            // Create a SQL command to retrieve data from the posts table
+            string commandText = "SELECT title, date, description, attendees FROM events ORDER BY created DESC";
+            SqlCommand command = new SqlCommand(commandText, connection);
+
+            // Open the database connection
+            connection.Open();
+
+            // Execute the command and store data in list
+            SqlDataReader reader = command.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    string[] events = new string[4];
+                    events[0] = reader.GetString(0);              // title
+                    events[1] = reader.GetDateTime(1).ToString(); // date
+                    events[2] = reader.GetString(2);              // description
+                    events[3] = reader.GetInt32(3).ToString();    // attendees
+                    eventList.Add(events);
+                }
+            }
+            else
+                MessageBox.Show("No feed available from this category");
+
+
+            // Close the data reader and the database connection
+            reader.Close();
+            connection.Close();
+        }
+
+        // makes sure only one checkbox is checked at a time for loading category feed
+        private void checkbox_posts_Click(object sender, EventArgs e)
+        {
+            checkbox_Events.Checked = false;
+            checkbox_polls.Checked = false;
+        }
+
+        private void checkbox_polls_Click(object sender, EventArgs e)
+        {
+            checkbox_Events.Checked = false;
+            checkbox_posts.Checked = false;
+        }
+
+        private void checkbox_Events_Click(object sender, EventArgs e)
+        {
+            checkbox_posts.Checked = false;
+            checkbox_polls.Checked = false;
+            
+        }
+
+        private void checkbox_posts_CheckedChanged(object sender, EventArgs e)
+        {
+            btn_loadFeed.Visible = true;
+            FlowLayoutPanel.Controls.Clear();
+        }
+
+        private void checkbox_polls_CheckedChanged(object sender, EventArgs e)
+        {
+            btn_loadFeed.Visible = true;
+            FlowLayoutPanel.Controls.Clear();
+        }
+
+        private void checkbox_Events_CheckedChanged(object sender, EventArgs e)
+        {
+            btn_loadFeed.Visible = true;
+            FlowLayoutPanel.Controls.Clear();
         }
     }
 }
