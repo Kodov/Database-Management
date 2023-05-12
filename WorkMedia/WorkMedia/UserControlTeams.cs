@@ -102,9 +102,10 @@ namespace WorkMedia
 
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        if(textBox1 != null)
+                        if(createTeam != null)
                         {
-                            command.Parameters.AddWithValue("team_name", textBox1);
+                            getUserId();
+                            command.Parameters.AddWithValue("team_name", createTeam);
 
                             command.Parameters.AddWithValue("member_id", currentUserId);
                         }

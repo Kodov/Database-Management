@@ -198,6 +198,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>finalprojectDataSet5.xsd</DependentUpon>
     </Compile>
+    <Compile Include="finalprojectDataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>finalprojectDataSet6.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="finalprojectDataSet7.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>finalprojectDataSet7.xsd</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -418,6 +428,28 @@
     </None>
     <None Include="finalprojectDataSet5.xss">
       <DependentUpon>finalprojectDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="finalprojectDataSet6.xsc">
+      <DependentUpon>finalprojectDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="finalprojectDataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>finalprojectDataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="finalprojectDataSet6.xss">
+      <DependentUpon>finalprojectDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="finalprojectDataSet7.xsc">
+      <DependentUpon>finalprojectDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="finalprojectDataSet7.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>finalprojectDataSet7.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="finalprojectDataSet7.xss">
+      <DependentUpon>finalprojectDataSet7.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

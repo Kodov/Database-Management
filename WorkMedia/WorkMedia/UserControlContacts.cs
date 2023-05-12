@@ -22,6 +22,8 @@ namespace WorkMedia
         public UserControlContacts()
         {
             InitializeComponent();
+            dataGridView1.Refresh();
+
         }
 
         public void SetCurrentUserInfo(string username)
@@ -107,7 +109,7 @@ namespace WorkMedia
                             // Retrieve the value of the "username" column from the selected row
                             string username = selectedRow.Cells["username"].Value.ToString();
 
-                            
+                            getUserId();
 
                             // Do something with the username value
 
@@ -162,27 +164,5 @@ namespace WorkMedia
         }
 
 
-        private void showAll()
-        {
-            // call this method to show all friends, regardless of status in 
-            // the friends text box
-
-        }
-
-        private void showOnline()
-        {
-            // call this to show friends that are online in the friends text box
-        }
-
-        private void showOffline()
-        {
-            // call to show friends that are offline
-
-        }
-
-        private void showBusy()
-        {
-            // Call method to show friends that are busy
-        }
     }
 }

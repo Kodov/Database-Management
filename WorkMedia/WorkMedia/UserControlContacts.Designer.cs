@@ -44,13 +44,16 @@
             this.finalprojectDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.finalprojectDataSet4 = new WorkMedia.finalprojectDataSet4();
             this.finalprojectDataSet4BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.usersBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.finalprojectDataSet5 = new WorkMedia.finalprojectDataSet5();
+            this.usersTableAdapter2 = new WorkMedia.finalprojectDataSet5TableAdapters.usersTableAdapter();
+            this.finalprojectDataSet7 = new WorkMedia.finalprojectDataSet7();
+            this.usersBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
+            this.usersTableAdapter3 = new WorkMedia.finalprojectDataSet7TableAdapters.usersTableAdapter();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.usernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usersBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
-            this.finalprojectDataSet5 = new WorkMedia.finalprojectDataSet5();
-            this.usersTableAdapter2 = new WorkMedia.finalprojectDataSet5TableAdapters.usersTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.finalprojectDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.finalprojectDataSet2)).BeginInit();
@@ -61,9 +64,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.finalprojectDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.finalprojectDataSet4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.finalprojectDataSet4BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.finalprojectDataSet5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.finalprojectDataSet7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -152,6 +157,34 @@
             this.finalprojectDataSet4BindingSource.DataSource = this.finalprojectDataSet4;
             this.finalprojectDataSet4BindingSource.Position = 0;
             // 
+            // usersBindingSource3
+            // 
+            this.usersBindingSource3.DataMember = "users";
+            this.usersBindingSource3.DataSource = this.finalprojectDataSet5;
+            // 
+            // finalprojectDataSet5
+            // 
+            this.finalprojectDataSet5.DataSetName = "finalprojectDataSet5";
+            this.finalprojectDataSet5.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // usersTableAdapter2
+            // 
+            this.usersTableAdapter2.ClearBeforeFill = true;
+            // 
+            // finalprojectDataSet7
+            // 
+            this.finalprojectDataSet7.DataSetName = "finalprojectDataSet7";
+            this.finalprojectDataSet7.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // usersBindingSource4
+            // 
+            this.usersBindingSource4.DataMember = "users";
+            this.usersBindingSource4.DataSource = this.finalprojectDataSet7;
+            // 
+            // usersTableAdapter3
+            // 
+            this.usersTableAdapter3.ClearBeforeFill = true;
+            // 
             // dataGridView1
             // 
             this.dataGridView1.AutoGenerateColumns = false;
@@ -160,13 +193,13 @@
             this.usernameDataGridViewTextBoxColumn,
             this.firstnameDataGridViewTextBoxColumn,
             this.lastnameDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.usersBindingSource3;
-            this.dataGridView1.Location = new System.Drawing.Point(259, 58);
+            this.dataGridView1.DataSource = this.usersBindingSource4;
+            this.dataGridView1.Location = new System.Drawing.Point(279, 121);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(608, 509);
-            this.dataGridView1.TabIndex = 5;
+            this.dataGridView1.Size = new System.Drawing.Size(570, 342);
+            this.dataGridView1.TabIndex = 4;
             // 
             // usernameDataGridViewTextBoxColumn
             // 
@@ -192,20 +225,6 @@
             this.lastnameDataGridViewTextBoxColumn.Name = "lastnameDataGridViewTextBoxColumn";
             this.lastnameDataGridViewTextBoxColumn.Width = 125;
             // 
-            // usersBindingSource3
-            // 
-            this.usersBindingSource3.DataMember = "users";
-            this.usersBindingSource3.DataSource = this.finalprojectDataSet5;
-            // 
-            // finalprojectDataSet5
-            // 
-            this.finalprojectDataSet5.DataSetName = "finalprojectDataSet5";
-            this.finalprojectDataSet5.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // usersTableAdapter2
-            // 
-            this.usersTableAdapter2.ClearBeforeFill = true;
-            // 
             // UserControlContacts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -227,9 +246,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.finalprojectDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.finalprojectDataSet4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.finalprojectDataSet4BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.finalprojectDataSet5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.finalprojectDataSet7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -251,12 +272,15 @@
         private System.Windows.Forms.BindingSource finalprojectDataSetBindingSource;
         private finalprojectDataSet4 finalprojectDataSet4;
         private System.Windows.Forms.BindingSource finalprojectDataSet4BindingSource;
+        private System.Windows.Forms.BindingSource usersBindingSource3;
+        private finalprojectDataSet5 finalprojectDataSet5;
+        private finalprojectDataSet5TableAdapters.usersTableAdapter usersTableAdapter2;
+        private System.Windows.Forms.BindingSource usersBindingSource4;
+        private finalprojectDataSet7 finalprojectDataSet7;
+        private finalprojectDataSet7TableAdapters.usersTableAdapter usersTableAdapter3;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn usernameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn firstnameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn lastnameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource usersBindingSource3;
-        private finalprojectDataSet5 finalprojectDataSet5;
-        private finalprojectDataSet5TableAdapters.usersTableAdapter usersTableAdapter2;
     }
 }
