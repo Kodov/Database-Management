@@ -78,14 +78,7 @@ namespace WorkMedia
 
         private void button1_Click(object sender, EventArgs e)
         {
-            // when clicked, check the if the text matches any names in the database
-            // for ( int i = 0; i < number of columns in the database for users; i ++)
-            // if(text == "**Name of anyone in the database**")
-            // {
-            //    add that name to the user's friend list
-            //    text = null;
-            // }
-            // 
+
 
 
             using (SqlConnection connection = new SqlConnection(connString))
@@ -93,12 +86,13 @@ namespace WorkMedia
                 try
                 {
                     connection.Open();
-                               
+                    getUserId();
+
                     string query = ("INSERT INTO FRIENDS (user_id, friend) " +
-                                    "VALUES (user_id, friend)");
-                    
-                    
-                    using (SqlCommand command = new SqlCommand(query, connection))     
+                                    "VALUES (@user_id, @friend)");
+
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
                     {
 
                         if (dataGridView1.SelectedRows.Count > 0) // check if any row is selected
@@ -113,45 +107,27 @@ namespace WorkMedia
 
                             // Do something with the username value
 
-                            command.Parameters.AddWithValue("user_id", currentUserId);
+                            command.Parameters.AddWithValue("@user_id", currentUserId);
 
-                            command.Parameters.AddWithValue("friend", username);
+                            command.Parameters.AddWithValue("@friend", username);
 
                         }
 
-
-                        
-
-                                 
                         int rowsAffected = command.ExecuteNonQuery();
 
-                                
+
                         if (rowsAffected > 0)
-                               
                         {
-                                  
                             MessageBox.Show("Friend added successfully!");
-                              
-                                  
+
                         }
-                                   
+
                         else
-                        
                         {
-                        
                             MessageBox.Show("Freind request failed!");
-                            
                         }
-
-                        
                     }
-
-                            
                 }
-
-
-                    
-                
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error: " + ex.Message);

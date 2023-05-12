@@ -19,7 +19,7 @@ namespace WorkMedia
         string leaveTeam = null;
         string viewTeam = null;
 
-       
+
         private readonly string connString = "Data Source=localhost;Initial Catalog=finalproject;Integrated Security=True";
         int currentUserId;
         string currentUsername;
@@ -88,46 +88,42 @@ namespace WorkMedia
         private void button1_Click(object sender, EventArgs e)
         {
             // creates a team if there is a name in the team name box
-            // that is not a duplicate team name
-            
+
+
 
             using (SqlConnection connection = new SqlConnection(connString))
             {
                 try
                 {
                     connection.Open();
+                    createTeam = textBox1.Text;
+
+                    getUserId();
 
                     string query = ("INSERT INTO TEAMS (team_name, member_id) " +
-                                    "VALUES (team_name, member_id)");
+                                    "VALUES (@team_name, @member_id)");
 
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        if(createTeam != null)
+                        if (createTeam != null)
                         {
-                            getUserId();
-                            command.Parameters.AddWithValue("team_name", createTeam);
 
-                            command.Parameters.AddWithValue("member_id", currentUserId);
+                            command.Parameters.AddWithValue("@team_name", createTeam);
+
+                            command.Parameters.AddWithValue("@member_id", 2);
                         }
 
                         int rowsAffected = command.ExecuteNonQuery();
 
 
                         if (rowsAffected > 0)
-
                         {
-
                             MessageBox.Show("Team added successfully!");
-
-
                         }
 
                         else
-
                         {
-
                             MessageBox.Show("Team creation failed!");
-
                         }
                     }
                 }
@@ -162,15 +158,13 @@ namespace WorkMedia
                             DataGridViewRow selectedRowMember = dataGridView1.SelectedRows[0];
                             int memberId = (int)selectedRowMember.Cells["member_id"].Value;
 
-                            if(memberId != currentUserId)
+                            if (memberId != currentUserId)
                             {
                                 // Get the currently selected row
                                 DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
 
                                 // Retrieve the value of the "team_name" column from the selected row
                                 string teamName = selectedRow.Cells["team_name"].Value.ToString();
-
-
 
                                 // Do something with the username value
 
@@ -184,30 +178,20 @@ namespace WorkMedia
 
 
                         if (rowsAffected > 0)
-
                         {
-
                             MessageBox.Show("Joined team successfully!");
-
 
                         }
 
                         else
-
                         {
 
                             MessageBox.Show("Failed to join team!");
-
                         }
-
 
                     }
 
-
                 }
-
-
-
 
                 catch (Exception ex)
                 {
@@ -229,9 +213,10 @@ namespace WorkMedia
                 try
                 {
                     connection.Open();
+                    getUserId();
 
                     string query = ("Delete from Teams where member_id = @currentUserId");
-                                    
+
 
 
                     using (SqlCommand command = new SqlCommand(query, connection))
@@ -248,10 +233,6 @@ namespace WorkMedia
 
                                 // Retrieve the value of the "team_name" column from the selected row
                                 string teamName = selectedRow.Cells["team_name"].Value.ToString();
-
-
-
-
 
                                 // Do something with the username value
 
