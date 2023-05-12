@@ -168,6 +168,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="contactsDGV.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>contactsDGV.xsd</DependentUpon>
+    </Compile>
     <Compile Include="finalprojectDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -363,6 +368,17 @@
     <EmbeddedResource Include="UserControlTeams.resx">
       <DependentUpon>UserControlTeams.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="contactsDGV.xsc">
+      <DependentUpon>contactsDGV.xsd</DependentUpon>
+    </None>
+    <None Include="contactsDGV.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>contactsDGV.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="contactsDGV.xss">
+      <DependentUpon>contactsDGV.xsd</DependentUpon>
+    </None>
     <None Include="finalprojectDataSet.xsc">
       <DependentUpon>finalprojectDataSet.xsd</DependentUpon>
     </None>
