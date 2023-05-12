@@ -203,16 +203,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>finalprojectDataSet5.xsd</DependentUpon>
     </Compile>
+<<<<<<< Updated upstream
     <Compile Include="finalprojectDataSet6.Designer.cs">
+=======
+    <Compile Include="finalprojectDataSet61.Designer.cs">
+>>>>>>> Stashed changes
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>finalprojectDataSet6.xsd</DependentUpon>
     </Compile>
+<<<<<<< Updated upstream
     <Compile Include="finalprojectDataSet7.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>finalprojectDataSet7.xsd</DependentUpon>
     </Compile>
+=======
+>>>>>>> Stashed changes
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -450,12 +457,17 @@
     </None>
     <None Include="finalprojectDataSet6.xsd">
       <Generator>MSDataSetGenerator</Generator>
+<<<<<<< Updated upstream
       <LastGenOutput>finalprojectDataSet6.Designer.cs</LastGenOutput>
+=======
+      <LastGenOutput>finalprojectDataSet61.Designer.cs</LastGenOutput>
+>>>>>>> Stashed changes
       <SubType>Designer</SubType>
     </None>
     <None Include="finalprojectDataSet6.xss">
       <DependentUpon>finalprojectDataSet6.xsd</DependentUpon>
     </None>
+<<<<<<< Updated upstream
     <None Include="finalprojectDataSet7.xsc">
       <DependentUpon>finalprojectDataSet7.xsd</DependentUpon>
     </None>
@@ -467,6 +479,8 @@
     <None Include="finalprojectDataSet7.xss">
       <DependentUpon>finalprojectDataSet7.xsd</DependentUpon>
     </None>
+=======
+>>>>>>> Stashed changes
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
