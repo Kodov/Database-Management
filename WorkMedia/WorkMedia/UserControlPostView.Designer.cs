@@ -37,6 +37,7 @@
             this.picbox_dislike = new System.Windows.Forms.PictureBox();
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.lbl_likeCount = new System.Windows.Forms.Label();
+            this.lbl_tag = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picbox_Like)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picbox_dislike)).BeginInit();
             this.SuspendLayout();
@@ -44,11 +45,11 @@
             // lbl_postHeader
             // 
             this.lbl_postHeader.AutoSize = true;
-            this.lbl_postHeader.Font = new System.Drawing.Font("Impact", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_postHeader.Font = new System.Drawing.Font("Impact", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_postHeader.ForeColor = System.Drawing.Color.Brown;
-            this.lbl_postHeader.Location = new System.Drawing.Point(222, 42);
+            this.lbl_postHeader.Location = new System.Drawing.Point(232, 35);
             this.lbl_postHeader.Name = "lbl_postHeader";
-            this.lbl_postHeader.Size = new System.Drawing.Size(129, 29);
+            this.lbl_postHeader.Size = new System.Drawing.Size(150, 34);
             this.lbl_postHeader.TabIndex = 0;
             this.lbl_postHeader.Text = "Post Header";
             // 
@@ -56,7 +57,7 @@
             // 
             this.txtbox_PostBody.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_PostBody.ForeColor = System.Drawing.Color.LightCoral;
-            this.txtbox_PostBody.Location = new System.Drawing.Point(227, 74);
+            this.txtbox_PostBody.Location = new System.Drawing.Point(238, 95);
             this.txtbox_PostBody.Multiline = true;
             this.txtbox_PostBody.Name = "txtbox_PostBody";
             this.txtbox_PostBody.Size = new System.Drawing.Size(435, 407);
@@ -70,7 +71,7 @@
             // picbox_Like
             // 
             this.picbox_Like.Image = ((System.Drawing.Image)(resources.GetObject("picbox_Like.Image")));
-            this.picbox_Like.Location = new System.Drawing.Point(166, 195);
+            this.picbox_Like.Location = new System.Drawing.Point(177, 216);
             this.picbox_Like.Name = "picbox_Like";
             this.picbox_Like.Size = new System.Drawing.Size(55, 50);
             this.picbox_Like.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -80,7 +81,7 @@
             // picbox_dislike
             // 
             this.picbox_dislike.Image = ((System.Drawing.Image)(resources.GetObject("picbox_dislike.Image")));
-            this.picbox_dislike.Location = new System.Drawing.Point(166, 251);
+            this.picbox_dislike.Location = new System.Drawing.Point(177, 272);
             this.picbox_dislike.Name = "picbox_dislike";
             this.picbox_dislike.Size = new System.Drawing.Size(55, 50);
             this.picbox_dislike.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -96,17 +97,29 @@
             // 
             this.lbl_likeCount.Font = new System.Drawing.Font("Impact", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_likeCount.ForeColor = System.Drawing.Color.Brown;
-            this.lbl_likeCount.Location = new System.Drawing.Point(119, 233);
+            this.lbl_likeCount.Location = new System.Drawing.Point(130, 254);
             this.lbl_likeCount.Name = "lbl_likeCount";
             this.lbl_likeCount.Size = new System.Drawing.Size(44, 29);
             this.lbl_likeCount.TabIndex = 9;
             this.lbl_likeCount.Text = "0";
+            // 
+            // lbl_tag
+            // 
+            this.lbl_tag.AutoSize = true;
+            this.lbl_tag.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_tag.ForeColor = System.Drawing.Color.DarkRed;
+            this.lbl_tag.Location = new System.Drawing.Point(234, 69);
+            this.lbl_tag.Name = "lbl_tag";
+            this.lbl_tag.Size = new System.Drawing.Size(106, 23);
+            this.lbl_tag.TabIndex = 10;
+            this.lbl_tag.Text = "Post Header";
             // 
             // UserControlPostView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MistyRose;
+            this.Controls.Add(this.lbl_tag);
             this.Controls.Add(this.lbl_likeCount);
             this.Controls.Add(this.picbox_dislike);
             this.Controls.Add(this.picbox_Like);
@@ -122,13 +135,13 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lbl_postHeader;
-        private System.Windows.Forms.TextBox txtbox_PostBody;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.PictureBox picbox_Like;
-        private System.Windows.Forms.PictureBox picbox_dislike;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
-        private System.Windows.Forms.Label lbl_likeCount;
+        public System.Windows.Forms.Label lbl_postHeader;
+        public System.Windows.Forms.TextBox txtbox_PostBody;
+        public System.Windows.Forms.PictureBox picbox_Like;
+        public System.Windows.Forms.PictureBox picbox_dislike;
+        public System.Windows.Forms.Label lbl_likeCount;
+        public System.Windows.Forms.Label lbl_tag;
     }
 }

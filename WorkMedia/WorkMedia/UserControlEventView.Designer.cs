@@ -33,7 +33,7 @@
             this.Attendees_header = new System.Windows.Forms.Label();
             this.Attend_event_button = new System.Windows.Forms.Button();
             this.lbl_attendCount = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_eventDate = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // Header_Label
@@ -94,23 +94,23 @@
             this.lbl_attendCount.TabIndex = 14;
             this.lbl_attendCount.Text = "0";
             // 
-            // label1
+            // lbl_eventDate
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Brown;
-            this.label1.Location = new System.Drawing.Point(276, 153);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(91, 23);
-            this.label1.TabIndex = 15;
-            this.label1.Text = "Event Date";
+            this.lbl_eventDate.AutoSize = true;
+            this.lbl_eventDate.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_eventDate.ForeColor = System.Drawing.Color.Brown;
+            this.lbl_eventDate.Location = new System.Drawing.Point(276, 153);
+            this.lbl_eventDate.Name = "lbl_eventDate";
+            this.lbl_eventDate.Size = new System.Drawing.Size(91, 23);
+            this.lbl_eventDate.TabIndex = 15;
+            this.lbl_eventDate.Text = "Event Date";
             // 
             // UserControlEventView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MistyRose;
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbl_eventDate);
             this.Controls.Add(this.lbl_attendCount);
             this.Controls.Add(this.Attend_event_button);
             this.Controls.Add(this.Attendees_header);
@@ -124,12 +124,11 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label Header_Label;
-        private System.Windows.Forms.TextBox Event_description;
         private System.Windows.Forms.Label Attendees_header;
         private System.Windows.Forms.Button Attend_event_button;
-        private System.Windows.Forms.Label lbl_attendCount;
-        private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Label Header_Label;
+        public System.Windows.Forms.TextBox Event_description;
+        public System.Windows.Forms.Label lbl_attendCount;
+        public System.Windows.Forms.Label lbl_eventDate;
     }
 }

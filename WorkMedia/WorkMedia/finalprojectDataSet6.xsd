@@ -64,21 +64,21 @@ SELECT id, team_name, member_id FROM Teams WHERE (id = @id)</CommandText>
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="finalprojectDataSet6" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_UserDSName="finalprojectDataSet6" msprop:Generator_DataSetName="finalprojectDataSet6">
+  <xs:element name="finalprojectDataSet6" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="finalprojectDataSet6" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="finalprojectDataSet6">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Teams" msprop:Generator_RowEvHandlerName="TeamsRowChangeEventHandler" msprop:Generator_RowDeletedName="TeamsRowDeleted" msprop:Generator_RowDeletingName="TeamsRowDeleting" msprop:Generator_RowEvArgName="TeamsRowChangeEvent" msprop:Generator_TablePropName="Teams" msprop:Generator_RowChangedName="TeamsRowChanged" msprop:Generator_RowChangingName="TeamsRowChanging" msprop:Generator_TableClassName="TeamsDataTable" msprop:Generator_RowClassName="TeamsRow" msprop:Generator_TableVarName="tableTeams" msprop:Generator_UserTableName="Teams">
+        <xs:element name="Teams" msprop:Generator_RowClassName="TeamsRow" msprop:Generator_RowEvHandlerName="TeamsRowChangeEventHandler" msprop:Generator_RowDeletedName="TeamsRowDeleted" msprop:Generator_RowDeletingName="TeamsRowDeleting" msprop:Generator_RowEvArgName="TeamsRowChangeEvent" msprop:Generator_TablePropName="Teams" msprop:Generator_RowChangedName="TeamsRowChanged" msprop:Generator_UserTableName="Teams" msprop:Generator_RowChangingName="TeamsRowChanging" msprop:Generator_TableClassName="TeamsDataTable" msprop:Generator_TableVarName="tableTeams">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_UserColumnName="id" type="xs:int" />
-              <xs:element name="team_name" msprop:Generator_ColumnPropNameInRow="team_name" msprop:Generator_ColumnPropNameInTable="team_nameColumn" msprop:Generator_ColumnVarNameInTable="columnteam_name" msprop:Generator_UserColumnName="team_name">
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnVarNameInTable="columnid" type="xs:int" />
+              <xs:element name="team_name" msprop:Generator_UserColumnName="team_name" msprop:Generator_ColumnPropNameInTable="team_nameColumn" msprop:Generator_ColumnPropNameInRow="team_name" msprop:Generator_ColumnVarNameInTable="columnteam_name">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="member_id" msprop:Generator_ColumnPropNameInRow="member_id" msprop:Generator_ColumnPropNameInTable="member_idColumn" msprop:Generator_ColumnVarNameInTable="columnmember_id" msprop:Generator_UserColumnName="member_id" type="xs:int" />
+              <xs:element name="member_id" msprop:Generator_UserColumnName="member_id" msprop:Generator_ColumnPropNameInTable="member_idColumn" msprop:Generator_ColumnPropNameInRow="member_id" msprop:Generator_ColumnVarNameInTable="columnmember_id" type="xs:int" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
