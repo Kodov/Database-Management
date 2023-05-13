@@ -51,9 +51,6 @@
             this.usersBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
             this.usersTableAdapter3 = new WorkMedia.finalprojectDataSet7TableAdapters.usersTableAdapter();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.contactsDGV = new WorkMedia.contactsDGV();
-            this.usersBindingSource5 = new System.Windows.Forms.BindingSource(this.components);
-            this.usersTableAdapter4 = new WorkMedia.contactsDGVTableAdapters.usersTableAdapter();
             this.usernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -72,17 +69,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.finalprojectDataSet7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.contactsDGV)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource5)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(341, 11);
+            this.label1.Location = new System.Drawing.Point(455, 14);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(143, 20);
+            this.label1.Size = new System.Drawing.Size(186, 25);
             this.label1.TabIndex = 2;
             this.label1.Text = "CONTACTS PAGE";
             // 
@@ -90,10 +86,10 @@
             // 
             this.button1.BackColor = System.Drawing.Color.Brown;
             this.button1.ForeColor = System.Drawing.Color.LightCoral;
-            this.button1.Location = new System.Drawing.Point(381, 465);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Location = new System.Drawing.Point(508, 572);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 25);
+            this.button1.Size = new System.Drawing.Size(100, 31);
             this.button1.TabIndex = 3;
             this.button1.Text = "Add Friend";
             this.button1.UseVisualStyleBackColor = false;
@@ -198,53 +194,48 @@
             this.firstnameDataGridViewTextBoxColumn,
             this.lastnameDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.usersBindingSource4;
-            this.dataGridView1.Location = new System.Drawing.Point(237, 99);
+            this.dataGridView1.Location = new System.Drawing.Point(279, 121);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(350, 277);
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(570, 342);
             this.dataGridView1.TabIndex = 4;
-            // 
-            // contactsDGV
-            // 
-            this.contactsDGV.DataSetName = "contactsDGV";
-            this.contactsDGV.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // usersBindingSource5
-            // 
-            this.usersBindingSource5.DataMember = "users";
-            this.usersBindingSource5.DataSource = this.contactsDGV;
-            // 
-            // usersTableAdapter4
-            // 
-            this.usersTableAdapter4.ClearBeforeFill = true;
             // 
             // usernameDataGridViewTextBoxColumn
             // 
             this.usernameDataGridViewTextBoxColumn.DataPropertyName = "username";
             this.usernameDataGridViewTextBoxColumn.HeaderText = "username";
+            this.usernameDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.usernameDataGridViewTextBoxColumn.Name = "usernameDataGridViewTextBoxColumn";
+            this.usernameDataGridViewTextBoxColumn.Width = 125;
             // 
             // firstnameDataGridViewTextBoxColumn
             // 
             this.firstnameDataGridViewTextBoxColumn.DataPropertyName = "first_name";
             this.firstnameDataGridViewTextBoxColumn.HeaderText = "first_name";
+            this.firstnameDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.firstnameDataGridViewTextBoxColumn.Name = "firstnameDataGridViewTextBoxColumn";
+            this.firstnameDataGridViewTextBoxColumn.Width = 125;
             // 
             // lastnameDataGridViewTextBoxColumn
             // 
             this.lastnameDataGridViewTextBoxColumn.DataPropertyName = "last_name";
             this.lastnameDataGridViewTextBoxColumn.HeaderText = "last_name";
+            this.lastnameDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.lastnameDataGridViewTextBoxColumn.Name = "lastnameDataGridViewTextBoxColumn";
+            this.lastnameDataGridViewTextBoxColumn.Width = 125;
             // 
             // UserControlContacts
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MistyRose;
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UserControlContacts";
-            this.Size = new System.Drawing.Size(860, 530);
+            this.Size = new System.Drawing.Size(1147, 652);
             ((System.ComponentModel.ISupportInitialize)(this.finalprojectDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.finalprojectDataSet2)).EndInit();
@@ -260,8 +251,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.finalprojectDataSet7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.contactsDGV)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -293,8 +282,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn usernameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn firstnameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn lastnameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource usersBindingSource5;
-        private contactsDGV contactsDGV;
-        private contactsDGVTableAdapters.usersTableAdapter usersTableAdapter4;
     }
 }

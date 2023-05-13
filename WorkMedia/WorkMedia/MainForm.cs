@@ -379,16 +379,82 @@ namespace WorkMedia
         // arrow boxes refresh user control with next or previous media feed item from database
         private void picBox_UpArrow_Click(object sender, EventArgs e)
         {
+            // resets checkboxes for next poll
+            uc_pollView.EnableAllCheckboxes();
+
             // get previous list index (home feed) to display
-            currentIndex--;
-            displayFeed();
+
+            // decides which category is checked, finds if index is within the range of datarows available for that category
+            if (checkbox_polls.Checked)
+            {
+                if ((currentIndex - 1) >= 0)
+                {
+                    currentIndex--;
+                    displayFeed();
+                }
+                else
+                    MessageBox.Show("You have reached the beginning");
+            }
+            else if (checkbox_Events.Checked)
+            {
+                if ((currentIndex - 1) >= 0)
+                {
+                    currentIndex--;
+                    displayFeed();
+                }
+                else
+                    MessageBox.Show("You have reached the beginning");
+            }
+            else if (checkbox_posts.Checked)
+            {
+                if ((currentIndex -1) >= 0)
+                {
+                    currentIndex--;
+                    displayFeed();
+                }
+                else
+                    MessageBox.Show("You have reached the beginning");
+            }
         }
 
         private void picBox_DownArrow_Click(object sender, EventArgs e)
         {
-            // get next list index (home feed) to display
-            currentIndex++;
-            displayFeed();
+            // resets checkboxes for next poll
+            uc_pollView.EnableAllCheckboxes();
+
+            // get next list index (home feed) to display 
+
+            // decides which category is checked, finds if index is within the range of datarows available for that category
+            if (checkbox_polls.Checked)
+            {
+                if ((currentIndex + 1) <= pollList.Count - 1)
+                {
+                    currentIndex++;
+                    displayFeed();
+                }
+                else
+                    MessageBox.Show("You have reached the end");
+            }
+            else if (checkbox_Events.Checked)
+            {
+                if ((currentIndex + 1) <= eventList.Count - 1)
+                {
+                    currentIndex++;
+                    displayFeed();
+                }
+                else
+                    MessageBox.Show("You have reached the end");
+            }
+            else if (checkbox_posts.Checked)
+            {
+                if ((currentIndex + 1) <= postList.Count - 1)
+                {
+                    currentIndex++;
+                    displayFeed();
+                }
+                else
+                    MessageBox.Show("You have reached the end");
+            }
         }
 
         private void btn_loadFeed_Click(object sender, EventArgs e)
@@ -421,11 +487,12 @@ namespace WorkMedia
 
                     FlowLayoutPanel.Controls.Clear();
                     FlowLayoutPanel.Controls.Add(uc_postView);
+
                 }
             }
         }
 
-        private void LoadPosts()
+        public void LoadPosts()
         {
             // clears all items to reload the list
             postList.Clear();
@@ -463,9 +530,12 @@ namespace WorkMedia
             // Close the data reader and the database connection
             reader.Close();
             connection.Close();
+
+            // display first item on feed
+            displayFeed();
         }
 
-        private void LoadPolls()
+        public void LoadPolls()
         {
             // clears all items to reload the list
             pollList.Clear();
@@ -475,7 +545,7 @@ namespace WorkMedia
             SqlConnection connection = new SqlConnection(connectionString);
 
             // Create a SQL command to retrieve data from the posts table
-            string commandText = "SELECT title, option1, option2, option3, option4, option5, vote_option1, vote_option2, vote_option3, vote_option4, vote_option5 " +
+            string commandText = "SELECT id, title, option1, option2, option3, option4, option5, vote_option1, vote_option2, vote_option3, vote_option4, vote_option5 " +
                                  "FROM polls ORDER BY created DESC";
             SqlCommand command = new SqlCommand(commandText, connection);
 
@@ -490,29 +560,34 @@ namespace WorkMedia
                 while (reader.Read())
                 {
                     string[] poll = new string[11];
-                    poll[0] = reader.GetString(0);              // title
-                    poll[1] = reader.GetString(1);              // option1
-                    poll[2] = reader.GetString(2);              // option2
-                    poll[3] = reader.GetString(3);              // option3
-                    poll[4] = reader.GetString(4);              // option4
-                    poll[5] = reader.GetString(5);              // option5
-                    poll[6] = reader.GetInt32(6).ToString();    // vote_option1
-                    poll[7] = reader.GetInt32(7).ToString();    // vote_option2
-                    poll[8] = reader.GetInt32(8).ToString();    // vote_option3
-                    poll[9] = reader.GetInt32(9).ToString();    // vote_option4
-                    poll[10] = reader.GetInt32(10).ToString();  // vote_option5
+                    uc_pollView.pollId = reader.GetInt32(0);   // gets unique poll id
+                    poll[0] = reader.GetString(1);              // title
+                    poll[1] = reader.GetString(2);              // option1
+                    poll[2] = reader.GetString(3);              // option2
+                    poll[3] = reader.GetString(4);              // option3
+                    poll[4] = reader.GetString(5);              // option4
+                    poll[5] = reader.GetString(6);              // option5
+                    poll[6] = reader.GetInt32(7).ToString();    // vote_option1
+                    poll[7] = reader.GetInt32(8).ToString();    // vote_option2
+                    poll[8] = reader.GetInt32(9).ToString();    // vote_option3
+                    poll[9] = reader.GetInt32(10).ToString();    // vote_option4
+                    poll[10] = reader.GetInt32(11).ToString();  // vote_option5
                     pollList.Add(poll);
                 }
             }
             else
                 MessageBox.Show("No feed available from this category");
 
+            
             // Close the data reader and the database connection
             reader.Close();
             connection.Close();
+
+            // display first item on feed
+            displayFeed();
         }
 
-        private void LoadEvents()
+        public void LoadEvents()
         {
             // clears all items to reload the list
             eventList.Clear();
@@ -550,6 +625,9 @@ namespace WorkMedia
             // Close the data reader and the database connection
             reader.Close();
             connection.Close();
+
+            // display first item on feed
+            displayFeed();
         }
 
         public void displayFeed()
@@ -565,38 +643,22 @@ namespace WorkMedia
             }
             else if (checkbox_polls.Checked) // use pollList
             {
+                // keeps chart non-visible until an option is chosen
+                uc_pollView.PollChart.Visible = false;
+
                 string[] currentPoll = pollList[currentIndex];
-                // clear previous pie chart series' and titles
-                uc_pollView.PollChart.Series.Clear();
-                uc_pollView.PollChart.Titles.Clear();
 
-                uc_pollView.PollChart.Legends.Add("Legend");
-                uc_pollView.PollChart.Legends[0].LegendStyle = LegendStyle.Table;
-                uc_pollView.PollChart.Legends[0].Docking = Docking.Bottom;
-                uc_pollView.PollChart.Legends[0].Alignment = StringAlignment.Center;
-                uc_pollView.PollChart.Legends[0].Title = "Options Chosen"; 
-                uc_pollView.PollChart.Legends[0].BorderColor = Color.Black;
-
+                // shows current poll options
                 uc_pollView.lbl_PollTitle.Text = currentPoll[0];
-                // gives chart a title
-                uc_pollView.PollChart.Titles.Add(currentPoll[0]);
-                // add new series to chart
-                Series series = new Series();
-                // add the series to the chart
-                uc_pollView.PollChart.Series.Add(currentPoll[0]);
-                // make it a pie chart
-                uc_pollView.PollChart.Series[currentPoll[0]].ChartType = SeriesChartType.Pie;
+                uc_pollView.checkBox_Option1.Text = currentPoll[1];
+                uc_pollView.checkBox_Option2.Text = currentPoll[2];
+                uc_pollView.checkBox_Option3.Text = currentPoll[3];
+                uc_pollView.checkBox_Option4.Text = currentPoll[4];
+                uc_pollView.checkBox_Option5.Text = currentPoll[5];
 
-                // Add data points to the series
-                uc_pollView.PollChart.Series[currentPoll[0]].Points.AddXY(currentPoll[1], Convert.ToInt32(currentPoll[6]));
-                uc_pollView.PollChart.Series[currentPoll[0]].Points.AddXY(currentPoll[2], Convert.ToInt32(currentPoll[7]));
-                uc_pollView.PollChart.Series[currentPoll[0]].Points.AddXY(currentPoll[3], Convert.ToInt32(currentPoll[8]));
-                uc_pollView.PollChart.Series[currentPoll[0]].Points.AddXY(currentPoll[4], Convert.ToInt32(currentPoll[9]));
-                uc_pollView.PollChart.Series[currentPoll[0]].Points.AddXY(currentPoll[5], Convert.ToInt32(currentPoll[10]));
 
-                uc_pollView.PollChart.Visible = true;
             }
-            else // use postList
+            else if (checkbox_posts.Checked)// use postList
             {
                 string[] currentPost = postList[currentIndex];
                 uc_postView.lbl_postHeader.Text = currentPost[0];
@@ -604,6 +666,43 @@ namespace WorkMedia
                 uc_postView.lbl_tag.Text = currentPost[2];
                 uc_postView.lbl_likeCount.Text = currentPost[3];
             }
+        }
+
+        public void getPollChart()
+        {
+            LoadPolls();
+            string[] currentPoll = pollList[currentIndex];
+
+            // clear previous pie chart series' and titles
+            uc_pollView.PollChart.Series.Clear();
+            uc_pollView.PollChart.Titles.Clear();
+            uc_pollView.PollChart.Legends.Clear();
+
+            uc_pollView.PollChart.Legends.Add("Legend");
+            uc_pollView.PollChart.Legends[0].LegendStyle = LegendStyle.Table;
+            uc_pollView.PollChart.Legends[0].Docking = Docking.Bottom;
+            uc_pollView.PollChart.Legends[0].Alignment = StringAlignment.Center;
+            uc_pollView.PollChart.Legends[0].Title = "Options Chosen";
+            uc_pollView.PollChart.Legends[0].BorderColor = Color.Black;
+
+            uc_pollView.lbl_PollTitle.Text = currentPoll[0];
+            // gives chart a title
+            uc_pollView.PollChart.Titles.Add(currentPoll[0]);
+            // add new series to chart
+            Series series = new Series();
+            // add the series to the chart
+            uc_pollView.PollChart.Series.Add(currentPoll[0]);
+            // make it a pie chart
+            uc_pollView.PollChart.Series[currentPoll[0]].ChartType = SeriesChartType.Pie;
+
+            // Add data points to the series, including the count of each data point
+            uc_pollView.PollChart.Series[currentPoll[0]].Points.AddXY(currentPoll[1] + " (" + currentPoll[6] + ")", Convert.ToInt32(currentPoll[6]));
+            uc_pollView.PollChart.Series[currentPoll[0]].Points.AddXY(currentPoll[2] + " (" + currentPoll[7] + ")", Convert.ToInt32(currentPoll[7]));
+            uc_pollView.PollChart.Series[currentPoll[0]].Points.AddXY(currentPoll[3] + " (" + currentPoll[8] + ")", Convert.ToInt32(currentPoll[8]));
+            uc_pollView.PollChart.Series[currentPoll[0]].Points.AddXY(currentPoll[4] + " (" + currentPoll[9] + ")", Convert.ToInt32(currentPoll[9]));
+            uc_pollView.PollChart.Series[currentPoll[0]].Points.AddXY(currentPoll[5] + " (" + currentPoll[10] + ")", Convert.ToInt32(currentPoll[10]));
+
+            uc_pollView.PollChart.Visible = true;
         }
 
         // makes sure only one checkbox is checked at a time for loading category feed
