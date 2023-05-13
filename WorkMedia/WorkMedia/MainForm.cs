@@ -43,7 +43,7 @@ namespace WorkMedia
         string password = uc_login.password;
         public bool isAdmin;
         string currentUsername;
-        int currentUserId;
+        public int currentUserId;
 
         // tracks which datarow is being sent to home feed from currently selected category
         int currentIndex = 0;

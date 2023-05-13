@@ -68,17 +68,16 @@ namespace WorkMedia
                     command.Parameters.AddWithValue("@tag", tag);
 
                     // Execute the SQL command
-                    // Execute the command
                     int rowsAffected = command.ExecuteNonQuery();
 
                     if (rowsAffected > 0)
                     {
-                        MessageBox.Show("Poll created successfully!");
+                        MessageBox.Show("report created successfully!");
                         Discard_button_Click(this, EventArgs.Empty);
                     }
                     else
                     {
-                        MessageBox.Show("Poll creation failed!");
+                        MessageBox.Show("report creation failed!");
                     }
                 }
             }
