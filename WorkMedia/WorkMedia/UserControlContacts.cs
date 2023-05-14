@@ -22,15 +22,64 @@ namespace WorkMedia
         public UserControlContacts()
         {
             InitializeComponent();
-            dataGridView1.Refresh();
-
+            PopulateGridContacts();
         }
 
-        public void SetCurrentUserInfo(string username)
+        private void PopulateGridContacts()
         {
-            this.currentUsername = username;
+            //MainForm mainForm = Application.OpenForms.OfType<MainForm>().FirstOrDefault();
+            //currentUserId = mainForm.currentUserId;
+            //mainForm.SetCurrentUsername(currentUsername);
+
+            // Create a connection to the SQL database
+            string connectionString = "Data Source=localhost;Initial Catalog=finalproject;Integrated Security=True";
+            SqlConnection connection = new SqlConnection(connectionString);
+
+            // Create a SQL command to retrieve data from the users table
+            string commandText = "SELECT username, first_name, last_name FROM users";
+            SqlCommand command = new SqlCommand(commandText, connection);
+
+            // Open the database connection
+            connection.Open();
+
+            // Create a data adapter to retrieve the data and fill a DataTable
+            SqlDataAdapter adapter = new SqlDataAdapter(command);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+
+            // Bind the DataTable to the DataGridView
+            dataGridView1.DataSource = table;
+
+            // Close the database connection
+            connection.Close();
         }
 
+        private void PopulateGridFriends()
+        {
+            // Create a connection to the SQL database
+            string connectionString = "Data Source=localhost;Initial Catalog=finalproject;Integrated Security=True";
+            SqlConnection connection = new SqlConnection(connectionString);
+
+            // Create a SQL command to retrieve data from the friends table
+            string commandText = "SELECT friend FROM friends WHERE user_id = @userId";
+            SqlCommand command = new SqlCommand(commandText, connection);
+
+            // Add a parameter for the user ID to the SQL command
+            command.Parameters.AddWithValue("@userId", currentUserId);
+
+            // Create a data adapter to retrieve the data from the SQL command
+            SqlDataAdapter adapter = new SqlDataAdapter(command);
+
+            // Create a new data table to hold the results
+            DataTable dataTable = new DataTable();
+
+            // Fill the data table with the results from the data adapter
+            adapter.Fill(dataTable);
+
+            // Set the DataGridView's data source to the data table, and display only the friends column
+            dataGridView2.DataSource = dataTable;
+            dataGridView2.Columns["friend"].Visible = true;
+        }
 
         public void getUserId()
         {
@@ -44,7 +93,7 @@ namespace WorkMedia
                 {
                     connection.Open();
 
-                    string query = "SELECT id FROM users WHERE username=@username";
+                    string query = "SELECT id FROM users WHERE username = @username";
 
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
@@ -74,6 +123,7 @@ namespace WorkMedia
             }
 
             currentUserId = user_id;
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -91,7 +141,7 @@ namespace WorkMedia
                     string query = ("INSERT INTO FRIENDS (user_id, friend) " +
                                     "VALUES (@user_id, @friend)");
 
-
+                    MessageBox.Show(currentUserId.ToString());
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
 
@@ -136,6 +186,8 @@ namespace WorkMedia
                 {
                     connection.Close();
                 }
+
+                PopulateGridFriends();
             }
         }
 

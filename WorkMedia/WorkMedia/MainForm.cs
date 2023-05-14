@@ -632,39 +632,51 @@ namespace WorkMedia
 
         public void displayFeed()
         {
+            
             if (checkbox_Events.Checked) // use eventList
             {
-                string[] currentEvent = eventList[currentIndex];
-                uc_eventView.Header_Label.Text = currentEvent[0];
-                uc_eventView.lbl_eventDate.Text = currentEvent[1];
-                uc_eventView.Event_description.Text = currentEvent[2];
-                uc_eventView.lbl_attendCount.Text = currentEvent[3];
+                if (eventList.Count > 0)
+                {
+                    string[] currentEvent = eventList[currentIndex];
 
+                    uc_eventView.Header_Label.Text = currentEvent[0];
+                    uc_eventView.lbl_eventDate.Text = currentEvent[1];
+                    uc_eventView.Event_description.Text = currentEvent[2];
+                    uc_eventView.lbl_attendCount.Text = currentEvent[3];
+                }
+                else
+                {
+                    // make all uc eventview things invisible???????????????????????????? check if they come back???????????????????????????????
+                }
             }
             else if (checkbox_polls.Checked) // use pollList
             {
-                // keeps chart non-visible until an option is chosen
-                uc_pollView.PollChart.Visible = false;
+                if (pollList.Count > 0)
+                {
+                    // keeps chart non-visible until an option is chosen
+                    uc_pollView.PollChart.Visible = false;
 
-                string[] currentPoll = pollList[currentIndex];
+                    string[] currentPoll = pollList[currentIndex];
 
-                // shows current poll options
-                uc_pollView.lbl_PollTitle.Text = currentPoll[0];
-                uc_pollView.checkBox_Option1.Text = currentPoll[1];
-                uc_pollView.checkBox_Option2.Text = currentPoll[2];
-                uc_pollView.checkBox_Option3.Text = currentPoll[3];
-                uc_pollView.checkBox_Option4.Text = currentPoll[4];
-                uc_pollView.checkBox_Option5.Text = currentPoll[5];
-
-
+                    // shows current poll options
+                    uc_pollView.lbl_PollTitle.Text = currentPoll[0];
+                    uc_pollView.checkBox_Option1.Text = currentPoll[1];
+                    uc_pollView.checkBox_Option2.Text = currentPoll[2];
+                    uc_pollView.checkBox_Option3.Text = currentPoll[3];
+                    uc_pollView.checkBox_Option4.Text = currentPoll[4];
+                    uc_pollView.checkBox_Option5.Text = currentPoll[5];
+                }
             }
             else if (checkbox_posts.Checked)// use postList
             {
-                string[] currentPost = postList[currentIndex];
-                uc_postView.lbl_postHeader.Text = currentPost[0];
-                uc_postView.txtbox_PostBody.Text = currentPost[1];
-                uc_postView.lbl_tag.Text = currentPost[2];
-                uc_postView.lbl_likeCount.Text = currentPost[3];
+                if (postList.Count > 0)
+                {
+                    string[] currentPost = postList[currentIndex];
+                    uc_postView.lbl_postHeader.Text = currentPost[0];
+                    uc_postView.txtbox_PostBody.Text = currentPost[1];
+                    uc_postView.lbl_tag.Text = currentPost[2];
+                    uc_postView.lbl_likeCount.Text = currentPost[3];
+                }    
             }
         }
 
