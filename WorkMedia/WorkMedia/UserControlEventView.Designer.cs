@@ -50,9 +50,12 @@
             // 
             // Event_description
             // 
+            this.Event_description.BackColor = System.Drawing.Color.White;
+            this.Event_description.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Event_description.Location = new System.Drawing.Point(280, 179);
             this.Event_description.Multiline = true;
             this.Event_description.Name = "Event_description";
+            this.Event_description.ReadOnly = true;
             this.Event_description.Size = new System.Drawing.Size(393, 88);
             this.Event_description.TabIndex = 7;
             this.Event_description.TextChanged += new System.EventHandler(this.Event_description_TextChanged);
@@ -125,10 +128,10 @@
 
         #endregion
         private System.Windows.Forms.Label Attendees_header;
-        private System.Windows.Forms.Button Attend_event_button;
         public System.Windows.Forms.Label Header_Label;
         public System.Windows.Forms.TextBox Event_description;
         public System.Windows.Forms.Label lbl_attendCount;
         public System.Windows.Forms.Label lbl_eventDate;
+        public System.Windows.Forms.Button Attend_event_button;
     }
 }

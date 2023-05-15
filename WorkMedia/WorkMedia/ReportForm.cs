@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Google.Protobuf.Reflection.SourceCodeInfo.Types;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
@@ -27,6 +28,8 @@ namespace WorkMedia
             lbl_charLimit.Text = txtbox_report.Text.Length + "/100";
             MainForm mainForm = Application.OpenForms.OfType<MainForm>().FirstOrDefault();
             currentUserId = mainForm.currentUserId;
+            mainForm.logAction = "Bug Report";
+            mainForm.createLog();
         }
 
         private void txtbox_report_TextChanged(object sender, EventArgs e)

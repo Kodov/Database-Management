@@ -50,7 +50,7 @@ namespace WorkMedia
         private void btn_search_Click(object sender, EventArgs e)
         {
             string connectionString = "Data Source=localhost;Initial Catalog=finalproject;Integrated Security=True";
-            string query = "SELECT logs.action, logs.login, logs.logout, logs.user_id " +
+            string query = "SELECT logs.action, logs.login, logs.user_id " +
                            "FROM logs ";
 
             // alters query syntax in case date selection is added
@@ -66,7 +66,7 @@ namespace WorkMedia
             else
             {
                 // sets query back to default
-                query = "SELECT logs.action, logs.login, logs.logout, logs.user_id " +
+                query = "SELECT logs.action, logs.login, logs.user_id " +
                            "FROM logs ";
             }
 

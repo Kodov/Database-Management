@@ -34,6 +34,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView_Log = new System.Windows.Forms.DataGridView();
+            this.logsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.finalprojectDataSet3 = new WorkMedia.finalprojectDataSet3();
             this.logsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.finalprojectDataSet = new WorkMedia.finalprojectDataSet();
             this.logsTableAdapter = new WorkMedia.finalprojectDataSetTableAdapters.LogsTableAdapter();
@@ -46,14 +48,13 @@
             this.usersBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.usersTableAdapter1 = new WorkMedia.finalprojectDataSet2TableAdapters.usersTableAdapter();
             this.checkbox_dateFilter = new System.Windows.Forms.CheckBox();
-            this.finalprojectDataSet3 = new WorkMedia.finalprojectDataSet3();
-            this.logsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.logsTableAdapter1 = new WorkMedia.finalprojectDataSet3TableAdapters.LogsTableAdapter();
             this.useridDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.action = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.login = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.logout = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Log)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logsBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.finalprojectDataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.finalprojectDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.finalprojectDataSet1)).BeginInit();
@@ -61,8 +62,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.finalprojectDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.finalprojectDataSet3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.logsBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // filter_date
@@ -125,14 +124,23 @@
             this.dataGridView_Log.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.useridDataGridViewTextBoxColumn,
             this.action,
-            this.login,
-            this.logout});
+            this.login});
             this.dataGridView_Log.DataSource = this.logsBindingSource1;
             this.dataGridView_Log.Location = new System.Drawing.Point(45, 60);
             this.dataGridView_Log.Name = "dataGridView_Log";
             this.dataGridView_Log.ReadOnly = true;
-            this.dataGridView_Log.Size = new System.Drawing.Size(559, 445);
+            this.dataGridView_Log.Size = new System.Drawing.Size(409, 445);
             this.dataGridView_Log.TabIndex = 11;
+            // 
+            // logsBindingSource1
+            // 
+            this.logsBindingSource1.DataMember = "Logs";
+            this.logsBindingSource1.DataSource = this.finalprojectDataSet3;
+            // 
+            // finalprojectDataSet3
+            // 
+            this.finalprojectDataSet3.DataSetName = "finalprojectDataSet3";
+            this.finalprojectDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // logsBindingSource
             // 
@@ -206,16 +214,6 @@
             this.checkbox_dateFilter.UseVisualStyleBackColor = true;
             this.checkbox_dateFilter.CheckedChanged += new System.EventHandler(this.checkbox_dateFilter_CheckedChanged);
             // 
-            // finalprojectDataSet3
-            // 
-            this.finalprojectDataSet3.DataSetName = "finalprojectDataSet3";
-            this.finalprojectDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // logsBindingSource1
-            // 
-            this.logsBindingSource1.DataMember = "Logs";
-            this.logsBindingSource1.DataSource = this.finalprojectDataSet3;
-            // 
             // logsTableAdapter1
             // 
             this.logsTableAdapter1.ClearBeforeFill = true;
@@ -243,14 +241,6 @@
             this.login.ReadOnly = true;
             this.login.Width = 140;
             // 
-            // logout
-            // 
-            this.logout.DataPropertyName = "logout";
-            this.logout.HeaderText = "logout";
-            this.logout.Name = "logout";
-            this.logout.ReadOnly = true;
-            this.logout.Width = 150;
-            // 
             // UserControlLog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -267,6 +257,8 @@
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Size = new System.Drawing.Size(860, 530);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Log)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logsBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.finalprojectDataSet3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.logsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.finalprojectDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.finalprojectDataSet1)).EndInit();
@@ -274,8 +266,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.finalprojectDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.finalprojectDataSet3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.logsBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -300,12 +290,11 @@
         private System.Windows.Forms.BindingSource usersBindingSource1;
         private finalprojectDataSet2TableAdapters.usersTableAdapter usersTableAdapter1;
         private System.Windows.Forms.CheckBox checkbox_dateFilter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn useridDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn action;
-        private System.Windows.Forms.DataGridViewTextBoxColumn login;
-        private System.Windows.Forms.DataGridViewTextBoxColumn logout;
         private System.Windows.Forms.BindingSource logsBindingSource1;
         private finalprojectDataSet3 finalprojectDataSet3;
         private finalprojectDataSet3TableAdapters.LogsTableAdapter logsTableAdapter1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn useridDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn action;
+        private System.Windows.Forms.DataGridViewTextBoxColumn login;
     }
 }

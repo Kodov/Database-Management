@@ -44,6 +44,8 @@ namespace WorkMedia
         public bool isAdmin;
         string currentUsername;
         public int currentUserId;
+        public int getPollId;
+        public string logAction;
 
         // tracks which datarow is being sent to home feed from currently selected category
         int currentIndex = 0;
@@ -125,6 +127,8 @@ namespace WorkMedia
         /// relocates active tab marker & changes tab header text
         /// clears FlowLayoutPanel & adds new tab uc on click
         /// </summary>
+        /// 
+
         public void picbox_home_Click(object sender, EventArgs e)
         {
             if (!isAuthorized)
@@ -152,6 +156,8 @@ namespace WorkMedia
                 label_TabHeader.Text = "Home";
                 FlowLayoutPanel.Controls.Clear();
                 FlowLayoutPanel.Controls.Add(uc_home);
+                logAction = "Home";
+                createLog();
             }
         }
 
@@ -169,6 +175,8 @@ namespace WorkMedia
                 label_TabHeader.Text = "Contacts";
                 FlowLayoutPanel.Controls.Clear();
                 FlowLayoutPanel.Controls.Add(uc_contacts);
+                logAction = "Contacts";
+                createLog();
             }
             else
                 return;
@@ -188,6 +196,8 @@ namespace WorkMedia
                 label_TabHeader.Text = "Teams";
                 FlowLayoutPanel.Controls.Clear();
                 FlowLayoutPanel.Controls.Add(uc_teams);
+                logAction = "Teams";
+                createLog();
             }
             else
                 return;
@@ -207,6 +217,8 @@ namespace WorkMedia
                 label_TabHeader.Text = "Messages";
                 FlowLayoutPanel.Controls.Clear();
                 FlowLayoutPanel.Controls.Add(uc_messages);
+                logAction = "Messages";
+                createLog();
             }
             else
                 return;
@@ -226,6 +238,8 @@ namespace WorkMedia
                 label_TabHeader.Text = "Post";
                 FlowLayoutPanel.Controls.Clear();
                 FlowLayoutPanel.Controls.Add(uc_post);
+                logAction = "Post";
+                createLog();
             }
             else
                 return;
@@ -245,6 +259,8 @@ namespace WorkMedia
                 label_TabHeader.Text = "Event";
                 FlowLayoutPanel.Controls.Clear();
                 FlowLayoutPanel.Controls.Add(uc_event);
+                logAction = "Event";
+                createLog();
             }
             else
                 return;
@@ -264,6 +280,8 @@ namespace WorkMedia
                 label_TabHeader.Text = "Poll";
                 FlowLayoutPanel.Controls.Clear();
                 FlowLayoutPanel.Controls.Add(uc_poll);
+                logAction = "Poll";
+                createLog();
             }
             else
                 return;
@@ -285,6 +303,8 @@ namespace WorkMedia
                     label_TabHeader.Text = "Log";
                     FlowLayoutPanel.Controls.Clear();
                     FlowLayoutPanel.Controls.Add(uc_log);
+                    logAction = "Log";
+                    createLog();
                 }
                 else
                 {
@@ -309,6 +329,8 @@ namespace WorkMedia
                 label_TabHeader.Text = "Settings";
                 FlowLayoutPanel.Controls.Clear();
                 FlowLayoutPanel.Controls.Add(uc_settings);
+                logAction = "Settings";
+                createLog();
             }
             else
                 return;
@@ -318,6 +340,33 @@ namespace WorkMedia
         {
             System.Windows.Forms.Application.Exit();
         }
+
+        // logs user actions in logs tab
+        public void createLog()
+        {
+            // Set up the connection string and SQL query
+            string connectionString = "Data Source=localhost;Initial Catalog=finalproject;Integrated Security=True";
+            string sqlQuery = "INSERT INTO logs (user_id, action, login, logout) VALUES (@userId, @currentPage, @loginTime, @logoutTime)";
+
+            // Set up the SQL connection and command
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand(sqlQuery, connection))
+                {
+                    // Add the parameters to the SQL command
+                    command.Parameters.AddWithValue("@userId", currentUserId);
+                    command.Parameters.AddWithValue("@currentPage", logAction);
+                    command.Parameters.AddWithValue("@loginTime", DateTime.Now);
+                    command.Parameters.AddWithValue("@logoutTime", 0);
+
+                    // Open the SQL connection, execute the command, and close the connection
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                    connection.Close();
+                }
+            }
+        }
+
 
         #endregion
 
@@ -381,6 +430,8 @@ namespace WorkMedia
         {
             // resets checkboxes for next poll
             uc_pollView.EnableAllCheckboxes();
+            uc_postView.lbl_likeCount.Enabled = true;
+            uc_eventView.Attend_event_button.Enabled = true;
 
             // get previous list index (home feed) to display
 
@@ -419,8 +470,9 @@ namespace WorkMedia
 
         private void picBox_DownArrow_Click(object sender, EventArgs e)
         {
-            // resets checkboxes for next poll
+            // resets feed usability
             uc_pollView.EnableAllCheckboxes();
+            uc_eventView.Attend_event_button.Enabled = true;
 
             // get next list index (home feed) to display 
 
@@ -502,7 +554,7 @@ namespace WorkMedia
             SqlConnection connection = new SqlConnection(connectionString);
 
             // Create a SQL command to retrieve data from the posts table
-            string commandText = "SELECT title, body, tag, likes FROM posts ORDER BY created DESC";
+            string commandText = "SELECT id, title, body, tag, likes FROM posts ORDER BY created DESC";
             SqlCommand command = new SqlCommand(commandText, connection);
 
             // Open the database connection
@@ -515,11 +567,12 @@ namespace WorkMedia
             {
                 while (reader.Read())
                 {
-                    string[] post = new string[4];
-                    post[0] = reader.GetString(0);              // title
-                    post[1] = reader.GetString(1);              // body
-                    post[2] = reader.GetString(2);              // tag
-                    post[3] = reader.GetInt32(3).ToString();    // likes
+                    string[] post = new string[5];
+                    post[0] = reader.GetInt32(0).ToString();    // unique post id
+                    post[1] = reader.GetString(1);              // title
+                    post[2] = reader.GetString(2);              // body
+                    post[3] = reader.GetString(3);              // tag
+                    post[4] = reader.GetInt32(4).ToString();    // likes
                     postList.Add(post);
                 }
             }
@@ -559,19 +612,20 @@ namespace WorkMedia
             {
                 while (reader.Read())
                 {
-                    string[] poll = new string[11];
-                    uc_pollView.pollId = reader.GetInt32(0);   // gets unique poll id
-                    poll[0] = reader.GetString(1);              // title
-                    poll[1] = reader.GetString(2);              // option1
-                    poll[2] = reader.GetString(3);              // option2
-                    poll[3] = reader.GetString(4);              // option3
-                    poll[4] = reader.GetString(5);              // option4
-                    poll[5] = reader.GetString(6);              // option5
-                    poll[6] = reader.GetInt32(7).ToString();    // vote_option1
-                    poll[7] = reader.GetInt32(8).ToString();    // vote_option2
-                    poll[8] = reader.GetInt32(9).ToString();    // vote_option3
-                    poll[9] = reader.GetInt32(10).ToString();    // vote_option4
-                    poll[10] = reader.GetInt32(11).ToString();  // vote_option5
+                    string[] poll = new string[12];
+                    //uc_pollView.pollId = reader.GetInt32(0);   // gets unique poll id
+                    poll[0] = reader.GetInt32(0).ToString();    // gets unique poll id
+                    poll[1] = reader.GetString(1);              // title
+                    poll[2] = reader.GetString(2);              // option1
+                    poll[3] = reader.GetString(3);              // option2
+                    poll[4] = reader.GetString(4);              // option3
+                    poll[5] = reader.GetString(5);              // option4
+                    poll[6] = reader.GetString(6);              // option5
+                    poll[7] = reader.GetInt32(7).ToString();    // vote_option1
+                    poll[8] = reader.GetInt32(8).ToString();    // vote_option2
+                    poll[9] = reader.GetInt32(9).ToString();    // vote_option3
+                    poll[10] = reader.GetInt32(10).ToString();    // vote_option4
+                    poll[11] = reader.GetInt32(11).ToString();  // vote_option5
                     pollList.Add(poll);
                 }
             }
@@ -597,7 +651,7 @@ namespace WorkMedia
             SqlConnection connection = new SqlConnection(connectionString);
 
             // Create a SQL command to retrieve data from the posts table
-            string commandText = "SELECT title, date, description, attendees FROM events ORDER BY created DESC";
+            string commandText = "SELECT id, title, date, description, attendees FROM events ORDER BY created DESC";
             SqlCommand command = new SqlCommand(commandText, connection);
 
             // Open the database connection
@@ -610,11 +664,12 @@ namespace WorkMedia
             {
                 while (reader.Read())
                 {
-                    string[] events = new string[4];
-                    events[0] = reader.GetString(0);              // title
-                    events[1] = reader.GetDateTime(1).ToString(); // date
-                    events[2] = reader.GetString(2);              // description
-                    events[3] = reader.GetInt32(3).ToString();    // attendees
+                    string[] events = new string[5];
+                    events[0] = reader.GetInt32(0).ToString();    // unique event id
+                    events[1] = reader.GetString(1);              // title
+                    events[2] = reader.GetDateTime(2).ToString(); // date
+                    events[3] = reader.GetString(3);              // description
+                    events[4] = reader.GetInt32(4).ToString();    // attendees
                     eventList.Add(events);
                 }
             }
@@ -638,15 +693,11 @@ namespace WorkMedia
                 if (eventList.Count > 0)
                 {
                     string[] currentEvent = eventList[currentIndex];
-
-                    uc_eventView.Header_Label.Text = currentEvent[0];
-                    uc_eventView.lbl_eventDate.Text = currentEvent[1];
-                    uc_eventView.Event_description.Text = currentEvent[2];
-                    uc_eventView.lbl_attendCount.Text = currentEvent[3];
-                }
-                else
-                {
-                    // make all uc eventview things invisible???????????????????????????? check if they come back???????????????????????????????
+                    uc_eventView.EventId = Convert.ToInt32(currentEvent[0]);
+                    uc_eventView.Header_Label.Text = currentEvent[1];
+                    uc_eventView.lbl_eventDate.Text = currentEvent[2];
+                    uc_eventView.Event_description.Text = currentEvent[3];
+                    uc_eventView.lbl_attendCount.Text = currentEvent[4];
                 }
             }
             else if (checkbox_polls.Checked) // use pollList
@@ -659,12 +710,13 @@ namespace WorkMedia
                     string[] currentPoll = pollList[currentIndex];
 
                     // shows current poll options
-                    uc_pollView.lbl_PollTitle.Text = currentPoll[0];
-                    uc_pollView.checkBox_Option1.Text = currentPoll[1];
-                    uc_pollView.checkBox_Option2.Text = currentPoll[2];
-                    uc_pollView.checkBox_Option3.Text = currentPoll[3];
-                    uc_pollView.checkBox_Option4.Text = currentPoll[4];
-                    uc_pollView.checkBox_Option5.Text = currentPoll[5];
+                    uc_pollView.pollId = Convert.ToInt32(currentPoll[0]); 
+                    uc_pollView.lbl_PollTitle.Text = currentPoll[1];
+                    uc_pollView.checkBox_Option1.Text = currentPoll[2];
+                    uc_pollView.checkBox_Option2.Text = currentPoll[3];
+                    uc_pollView.checkBox_Option3.Text = currentPoll[4];
+                    uc_pollView.checkBox_Option4.Text = currentPoll[5];
+                    uc_pollView.checkBox_Option5.Text = currentPoll[6];
                 }
             }
             else if (checkbox_posts.Checked)// use postList
@@ -672,12 +724,28 @@ namespace WorkMedia
                 if (postList.Count > 0)
                 {
                     string[] currentPost = postList[currentIndex];
-                    uc_postView.lbl_postHeader.Text = currentPost[0];
-                    uc_postView.txtbox_PostBody.Text = currentPost[1];
-                    uc_postView.lbl_tag.Text = currentPost[2];
-                    uc_postView.lbl_likeCount.Text = currentPost[3];
+                    uc_postView.PostId = Convert.ToInt32(currentPost[0]);
+                    uc_postView.lbl_postHeader.Text = currentPost[1];
+                    uc_postView.txtbox_PostBody.Text = currentPost[2];
+                    uc_postView.lbl_tag.Text = currentPost[3];
+                    uc_postView.lbl_likeCount.Text = currentPost[4];
                 }    
             }
+        }
+
+        public void getLikes()
+        {
+            LoadPosts();
+            string[] currentPost = postList[currentIndex];
+            uc_postView.lbl_likeCount.Text = currentPost[4];
+        }
+
+        public void getAttendees()
+        {
+            LoadEvents();
+            string[] currentEvent = eventList[currentIndex];
+
+            uc_eventView.lbl_attendCount.Text = currentEvent[4];
         }
 
         public void getPollChart()
@@ -697,22 +765,22 @@ namespace WorkMedia
             uc_pollView.PollChart.Legends[0].Title = "Options Chosen";
             uc_pollView.PollChart.Legends[0].BorderColor = Color.Black;
 
-            uc_pollView.lbl_PollTitle.Text = currentPoll[0];
+            uc_pollView.lbl_PollTitle.Text = currentPoll[1];
             // gives chart a title
-            uc_pollView.PollChart.Titles.Add(currentPoll[0]);
+            uc_pollView.PollChart.Titles.Add(currentPoll[1]);
             // add new series to chart
             Series series = new Series();
             // add the series to the chart
-            uc_pollView.PollChart.Series.Add(currentPoll[0]);
+            uc_pollView.PollChart.Series.Add(currentPoll[1]);
             // make it a pie chart
-            uc_pollView.PollChart.Series[currentPoll[0]].ChartType = SeriesChartType.Pie;
+            uc_pollView.PollChart.Series[currentPoll[1]].ChartType = SeriesChartType.Pie;
 
             // Add data points to the series, including the count of each data point
-            uc_pollView.PollChart.Series[currentPoll[0]].Points.AddXY(currentPoll[1] + " (" + currentPoll[6] + ")", Convert.ToInt32(currentPoll[6]));
-            uc_pollView.PollChart.Series[currentPoll[0]].Points.AddXY(currentPoll[2] + " (" + currentPoll[7] + ")", Convert.ToInt32(currentPoll[7]));
-            uc_pollView.PollChart.Series[currentPoll[0]].Points.AddXY(currentPoll[3] + " (" + currentPoll[8] + ")", Convert.ToInt32(currentPoll[8]));
-            uc_pollView.PollChart.Series[currentPoll[0]].Points.AddXY(currentPoll[4] + " (" + currentPoll[9] + ")", Convert.ToInt32(currentPoll[9]));
-            uc_pollView.PollChart.Series[currentPoll[0]].Points.AddXY(currentPoll[5] + " (" + currentPoll[10] + ")", Convert.ToInt32(currentPoll[10]));
+            uc_pollView.PollChart.Series[currentPoll[1]].Points.AddXY(currentPoll[2] + " (" + currentPoll[7] + ")", Convert.ToInt32(currentPoll[7]));
+            uc_pollView.PollChart.Series[currentPoll[1]].Points.AddXY(currentPoll[3] + " (" + currentPoll[8] + ")", Convert.ToInt32(currentPoll[8]));
+            uc_pollView.PollChart.Series[currentPoll[1]].Points.AddXY(currentPoll[4] + " (" + currentPoll[9] + ")", Convert.ToInt32(currentPoll[9]));
+            uc_pollView.PollChart.Series[currentPoll[1]].Points.AddXY(currentPoll[5] + " (" + currentPoll[10] + ")", Convert.ToInt32(currentPoll[10]));
+            uc_pollView.PollChart.Series[currentPoll[1]].Points.AddXY(currentPoll[6] + " (" + currentPoll[11] + ")", Convert.ToInt32(currentPoll[11]));
 
             uc_pollView.PollChart.Visible = true;
         }
