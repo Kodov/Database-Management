@@ -234,6 +234,7 @@ namespace WorkMedia
                 FlowLayoutPanel.Controls.Add(uc_messages);
                 logAction = "Messages";
                 createLog();
+                MessageBox.Show("Not implemented yet, turn back!");
             }
             else
                 return;
@@ -447,6 +448,7 @@ namespace WorkMedia
             uc_pollView.EnableAllCheckboxes();
             uc_postView.lbl_likeCount.Enabled = true;
             uc_eventView.Attend_event_button.Enabled = true;
+            uc_postView.picbox_Like.Enabled = true;
 
             // get previous list index (home feed) to display
 
@@ -488,6 +490,7 @@ namespace WorkMedia
             // resets feed usability
             uc_pollView.EnableAllCheckboxes();
             uc_eventView.Attend_event_button.Enabled = true;
+            uc_postView.picbox_Like.Enabled = true;
 
             // get next list index (home feed) to display 
 

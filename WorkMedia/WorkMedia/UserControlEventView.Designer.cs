@@ -51,7 +51,7 @@
             // Event_description
             // 
             this.Event_description.BackColor = System.Drawing.Color.White;
-            this.Event_description.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Event_description.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Event_description.Location = new System.Drawing.Point(280, 179);
             this.Event_description.Multiline = true;
             this.Event_description.Name = "Event_description";

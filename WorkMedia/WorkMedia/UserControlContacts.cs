@@ -15,7 +15,7 @@ namespace WorkMedia
 {
     public partial class UserControlContacts : UserControl
     {
-        //private readonly string connString = "Data Source=localhost;Initial Catalog=finalproject;Integrated Security=True";
+        private readonly string connString = "Data Source=localhost;Initial Catalog=finalproject;Integrated Security=True";
         public int currentUserId;
         public string currentUsername;
         public UserControlContacts()
@@ -96,6 +96,22 @@ namespace WorkMedia
                         {
                             DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
                             currentUsername = selectedRow.Cells["username"].Value.ToString();
+
+                            // Check if the user_id and friend combination already exists
+                            string checkQuery = "SELECT COUNT(*) FROM friends WHERE user_id = @user_id AND friend = @friend";
+                            using (SqlCommand checkCommand = new SqlCommand(checkQuery, connection))
+                            {
+                                checkCommand.Parameters.AddWithValue("@user_id", currentUserId);
+                                checkCommand.Parameters.AddWithValue("@friend", currentUsername);
+
+                                int existingRows = (int)checkCommand.ExecuteScalar();
+
+                                if (existingRows > 0)
+                                {
+                                    MessageBox.Show("Friend already added");
+                                    return; // Exit the method without executing the insert query
+                                }
+                            }
 
                             command.Parameters.AddWithValue("@user_id", currentUserId);
                             command.Parameters.AddWithValue("@friend", currentUsername);

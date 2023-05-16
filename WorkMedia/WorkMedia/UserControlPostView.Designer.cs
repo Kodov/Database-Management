@@ -53,8 +53,8 @@
             // 
             // txtbox_PostBody
             // 
-            this.txtbox_PostBody.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbox_PostBody.ForeColor = System.Drawing.Color.LightCoral;
+            this.txtbox_PostBody.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbox_PostBody.ForeColor = System.Drawing.Color.Black;
             this.txtbox_PostBody.Location = new System.Drawing.Point(238, 95);
             this.txtbox_PostBody.Multiline = true;
             this.txtbox_PostBody.Name = "txtbox_PostBody";
