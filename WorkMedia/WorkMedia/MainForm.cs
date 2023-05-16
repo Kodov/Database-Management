@@ -47,6 +47,9 @@ namespace WorkMedia
         public int getPollId;
         public string logAction;
 
+        public int CurrentUserId { get; private set; }
+
+
         // tracks which datarow is being sent to home feed from currently selected category
         int currentIndex = 0;
 
@@ -71,6 +74,18 @@ namespace WorkMedia
         public void SetCurrentUserIdEvent()
         {
             uc_event.currentUserId = currentUserId;
+        }
+        public void SetCurrentUserIdContact()
+        {
+            uc_contacts.currentUserId = currentUserId;
+        }
+        public void SetCurrentUserIdTeam()
+        {
+            uc_teams.currentUserId = currentUserId;
+        }
+        public void SetCurrentUserIdSettings()
+        {
+            uc_settings.currentUserId = currentUserId;
         }
 
         public void getUserId()

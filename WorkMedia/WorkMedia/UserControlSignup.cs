@@ -25,7 +25,6 @@ namespace WorkMedia
                 MessageBox.Show("Fill out all credentials");
             else
             {
-                MessageBox.Show("here");
                 // Read the user input from text boxes
                 string firstName = txtbox_FirstName.Text;
                 string lastName = txtbox_LastName.Text;
@@ -70,7 +69,10 @@ namespace WorkMedia
                     // Close the database connection
                     connection.Close();
                 }
-
+                txtbox_FirstName.Text = "";
+                txtbox_LastName.Text = "";
+                txtbox_username.Text = "";
+                txtbox_password.Text = "";
                 btn_login_Click(this, EventArgs.Empty);
             }
         }
@@ -80,6 +82,10 @@ namespace WorkMedia
             MainForm mainForm = Application.OpenForms.OfType<MainForm>().FirstOrDefault();
             if (mainForm != null)
             {
+                txtbox_FirstName.Text = "";
+                txtbox_LastName.Text = "";
+                txtbox_username.Text = "";
+                txtbox_password.Text = "";
                 FlowLayoutPanel flowLayoutPanel = mainForm.FlowLayoutPanel;
                 // Use the FlowLayoutPanel
                 flowLayoutPanel.Controls.Clear();

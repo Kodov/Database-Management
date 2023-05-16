@@ -50,12 +50,19 @@
             this.usersBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
             this.usersTableAdapter3 = new WorkMedia.finalprojectDataSet7TableAdapters.usersTableAdapter();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.usernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.username = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.friend = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.friendsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.finalprojectDataSet8 = new WorkMedia.finalprojectDataSet8();
             this.label7 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btn_updateFriends = new System.Windows.Forms.Button();
+            this.btn_removeFriend = new System.Windows.Forms.Button();
+            this.friendsTableAdapter = new WorkMedia.finalprojectDataSet8TableAdapters.friendsTableAdapter();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.finalprojectDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.finalprojectDataSet2)).BeginInit();
@@ -72,6 +79,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.friendsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.finalprojectDataSet8)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -79,8 +88,8 @@
             this.button1.BackColor = System.Drawing.Color.Brown;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.LightCoral;
-            this.button1.Location = new System.Drawing.Point(600, 426);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Location = new System.Drawing.Point(572, 426);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 25);
             this.button1.TabIndex = 3;
@@ -185,12 +194,12 @@
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.usernameDataGridViewTextBoxColumn,
+            this.username,
             this.firstnameDataGridViewTextBoxColumn,
             this.lastnameDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.usersBindingSource4;
-            this.dataGridView1.Location = new System.Drawing.Point(417, 56);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Location = new System.Drawing.Point(389, 56);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
@@ -198,13 +207,15 @@
             this.dataGridView1.Size = new System.Drawing.Size(428, 347);
             this.dataGridView1.TabIndex = 4;
             // 
-            // usernameDataGridViewTextBoxColumn
+            // username
             // 
-            this.usernameDataGridViewTextBoxColumn.DataPropertyName = "username";
-            this.usernameDataGridViewTextBoxColumn.HeaderText = "username";
-            this.usernameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.usernameDataGridViewTextBoxColumn.Name = "usernameDataGridViewTextBoxColumn";
-            this.usernameDataGridViewTextBoxColumn.Width = 125;
+            this.username.DataPropertyName = "username";
+            this.username.HeaderText = "username";
+            this.username.MinimumWidth = 6;
+            this.username.Name = "username";
+            this.username.ReadOnly = true;
+            this.username.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.username.Width = 125;
             // 
             // firstnameDataGridViewTextBoxColumn
             // 
@@ -212,6 +223,8 @@
             this.firstnameDataGridViewTextBoxColumn.HeaderText = "first_name";
             this.firstnameDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.firstnameDataGridViewTextBoxColumn.Name = "firstnameDataGridViewTextBoxColumn";
+            this.firstnameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.firstnameDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.firstnameDataGridViewTextBoxColumn.Width = 125;
             // 
             // lastnameDataGridViewTextBoxColumn
@@ -220,22 +233,49 @@
             this.lastnameDataGridViewTextBoxColumn.HeaderText = "last_name";
             this.lastnameDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.lastnameDataGridViewTextBoxColumn.Name = "lastnameDataGridViewTextBoxColumn";
+            this.lastnameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.lastnameDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.lastnameDataGridViewTextBoxColumn.Width = 125;
             // 
             // dataGridView2
             // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.AutoGenerateColumns = false;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(41, 56);
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.friend});
+            this.dataGridView2.DataSource = this.friendsBindingSource;
+            this.dataGridView2.Location = new System.Drawing.Point(126, 56);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(279, 347);
+            this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.Size = new System.Drawing.Size(144, 347);
             this.dataGridView2.TabIndex = 5;
+            // 
+            // friend
+            // 
+            this.friend.DataPropertyName = "friend";
+            this.friend.HeaderText = "friend";
+            this.friend.Name = "friend";
+            this.friend.ReadOnly = true;
+            this.friend.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // friendsBindingSource
+            // 
+            this.friendsBindingSource.DataMember = "friends";
+            this.friendsBindingSource.DataSource = this.finalprojectDataSet8;
+            // 
+            // finalprojectDataSet8
+            // 
+            this.finalprojectDataSet8.DataSetName = "finalprojectDataSet8";
+            this.finalprojectDataSet8.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Brown;
-            this.label7.Location = new System.Drawing.Point(37, 30);
+            this.label7.Location = new System.Drawing.Point(122, 30);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(69, 23);
             this.label7.TabIndex = 29;
@@ -246,17 +286,63 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Brown;
-            this.label1.Location = new System.Drawing.Point(413, 30);
+            this.label1.Location = new System.Drawing.Point(385, 30);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(81, 23);
             this.label1.TabIndex = 30;
             this.label1.Text = "Contacts";
+            // 
+            // btn_updateFriends
+            // 
+            this.btn_updateFriends.BackColor = System.Drawing.Color.Brown;
+            this.btn_updateFriends.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_updateFriends.ForeColor = System.Drawing.Color.LightCoral;
+            this.btn_updateFriends.Location = new System.Drawing.Point(158, 426);
+            this.btn_updateFriends.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_updateFriends.Name = "btn_updateFriends";
+            this.btn_updateFriends.Size = new System.Drawing.Size(75, 25);
+            this.btn_updateFriends.TabIndex = 31;
+            this.btn_updateFriends.Text = "Update";
+            this.btn_updateFriends.UseVisualStyleBackColor = false;
+            this.btn_updateFriends.Click += new System.EventHandler(this.btn_updateFriends_Click);
+            // 
+            // btn_removeFriend
+            // 
+            this.btn_removeFriend.BackColor = System.Drawing.Color.Brown;
+            this.btn_removeFriend.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_removeFriend.ForeColor = System.Drawing.Color.LightCoral;
+            this.btn_removeFriend.Location = new System.Drawing.Point(158, 467);
+            this.btn_removeFriend.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_removeFriend.Name = "btn_removeFriend";
+            this.btn_removeFriend.Size = new System.Drawing.Size(75, 25);
+            this.btn_removeFriend.TabIndex = 32;
+            this.btn_removeFriend.Text = "Remove";
+            this.btn_removeFriend.UseVisualStyleBackColor = false;
+            this.btn_removeFriend.Click += new System.EventHandler(this.btn_removeFriend_Click);
+            // 
+            // friendsTableAdapter
+            // 
+            this.friendsTableAdapter.ClearBeforeFill = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Impact", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Brown;
+            this.label2.Location = new System.Drawing.Point(569, 34);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(240, 17);
+            this.label2.TabIndex = 33;
+            this.label2.Text = "(Select left-most cell to get proper results)";
             // 
             // UserControlContacts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MistyRose;
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.btn_removeFriend);
+            this.Controls.Add(this.btn_updateFriends);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.dataGridView2);
@@ -280,6 +366,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.friendsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.finalprojectDataSet8)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -307,11 +395,18 @@
         private finalprojectDataSet7 finalprojectDataSet7;
         private finalprojectDataSet7TableAdapters.usersTableAdapter usersTableAdapter3;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn usernameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn firstnameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lastnameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btn_updateFriends;
+        private System.Windows.Forms.Button btn_removeFriend;
+        private System.Windows.Forms.BindingSource friendsBindingSource;
+        private finalprojectDataSet8 finalprojectDataSet8;
+        private finalprojectDataSet8TableAdapters.friendsTableAdapter friendsTableAdapter;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn username;
+        private System.Windows.Forms.DataGridViewTextBoxColumn firstnameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lastnameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn friend;
     }
 }

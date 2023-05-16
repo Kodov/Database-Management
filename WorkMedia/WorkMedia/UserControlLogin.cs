@@ -58,6 +58,8 @@ namespace WorkMedia
                     mainForm.isAuthorized = true;
                     if (mainForm != null)
                     {
+                        txtbox_username.Text = "";
+                        txtbox_password.Text = "";
                         FlowLayoutPanel flowLayoutPanel = mainForm.FlowLayoutPanel;
                         // Use the FlowLayoutPanel
                         flowLayoutPanel.Controls.Clear();
@@ -93,6 +95,8 @@ namespace WorkMedia
 
             if (mainForm != null)
             {
+                txtbox_username.Text = "";
+                txtbox_password.Text = "";
                 FlowLayoutPanel flowLayoutPanel = mainForm.FlowLayoutPanel;
                 // Use the FlowLayoutPanel
                 flowLayoutPanel.Controls.Clear();

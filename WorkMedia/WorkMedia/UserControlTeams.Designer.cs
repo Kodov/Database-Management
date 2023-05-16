@@ -29,182 +29,328 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.finalprojectDataSet6 = new WorkMedia.finalprojectDataSet6();
             this.teamsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.finalprojectDataSet6 = new WorkMedia.finalprojectDataSet6();
             this.teamsTableAdapter = new WorkMedia.finalprojectDataSet6TableAdapters.TeamsTableAdapter();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.teamnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.memberidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.finalprojectDataSet6)).BeginInit();
+            this.dataGridView_Teams = new System.Windows.Forms.DataGridView();
+            this.teamsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.finalprojectDataSet9 = new WorkMedia.finalprojectDataSet9();
+            this.teamsTableAdapter1 = new WorkMedia.finalprojectDataSet9TableAdapters.TeamsTableAdapter();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btn_viewTeam = new System.Windows.Forms.Button();
+            this.btn_joinTeam = new System.Windows.Forms.Button();
+            this.txtbox_createTeam = new System.Windows.Forms.TextBox();
+            this.dataGridView_Members = new System.Windows.Forms.DataGridView();
+            this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.finalprojectDataSet11 = new WorkMedia.finalprojectDataSet11();
+            this.finalprojectDataSet10 = new WorkMedia.finalprojectDataSet10();
+            this.teamsBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.teamsTableAdapter2 = new WorkMedia.finalprojectDataSet10TableAdapters.TeamsTableAdapter();
+            this.usersTableAdapter = new WorkMedia.finalprojectDataSet11TableAdapters.usersTableAdapter();
+            this.btn_createTeam = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btn_LeaveTeam = new System.Windows.Forms.Button();
+            this.team_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.member_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_updateTeam = new System.Windows.Forms.Button();
+            this.username = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.first_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.last_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.teamsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.finalprojectDataSet6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Teams)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.teamsBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.finalprojectDataSet9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Members)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.finalprojectDataSet11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.finalprojectDataSet10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.teamsBindingSource2)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(539, 14);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(143, 25);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "TEAMS PAGE";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(197, 124);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(241, 22);
-            this.textBox1.TabIndex = 2;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Brown;
-            this.button1.Location = new System.Drawing.Point(265, 153);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(101, 32);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Create Team";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Brown;
-            this.button2.Location = new System.Drawing.Point(265, 218);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(101, 32);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Join Team";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.Brown;
-            this.button3.Location = new System.Drawing.Point(265, 284);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(101, 32);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "Leave Team";
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.Brown;
-            this.button4.Location = new System.Drawing.Point(265, 350);
-            this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(101, 32);
-            this.button4.TabIndex = 10;
-            this.button4.Text = "View Team";
-            this.button4.UseVisualStyleBackColor = false;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.teamnameDataGridViewTextBoxColumn,
-            this.memberidDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.teamsBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(567, 124);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(526, 370);
-            this.dataGridView1.TabIndex = 11;
-            // 
-            // finalprojectDataSet6
-            // 
-            this.finalprojectDataSet6.DataSetName = "finalprojectDataSet6";
-            this.finalprojectDataSet6.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // teamsBindingSource
             // 
             this.teamsBindingSource.DataMember = "Teams";
             this.teamsBindingSource.DataSource = this.finalprojectDataSet6;
             // 
+            // finalprojectDataSet6
+            // 
+            this.finalprojectDataSet6.DataSetName = "finalprojectDataSet6";
+            this.finalprojectDataSet6.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // teamsTableAdapter
             // 
             this.teamsTableAdapter.ClearBeforeFill = true;
             // 
-            // idDataGridViewTextBoxColumn
+            // dataGridView_Teams
             // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Width = 125;
+            this.dataGridView_Teams.AllowUserToAddRows = false;
+            this.dataGridView_Teams.AllowUserToDeleteRows = false;
+            this.dataGridView_Teams.AutoGenerateColumns = false;
+            this.dataGridView_Teams.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_Teams.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.team_name,
+            this.member_id});
+            this.dataGridView_Teams.DataSource = this.teamsBindingSource1;
+            this.dataGridView_Teams.Location = new System.Drawing.Point(226, 75);
+            this.dataGridView_Teams.Name = "dataGridView_Teams";
+            this.dataGridView_Teams.ReadOnly = true;
+            this.dataGridView_Teams.Size = new System.Drawing.Size(243, 359);
+            this.dataGridView_Teams.TabIndex = 0;
             // 
-            // teamnameDataGridViewTextBoxColumn
+            // teamsBindingSource1
             // 
-            this.teamnameDataGridViewTextBoxColumn.DataPropertyName = "team_name";
-            this.teamnameDataGridViewTextBoxColumn.HeaderText = "team_name";
-            this.teamnameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.teamnameDataGridViewTextBoxColumn.Name = "teamnameDataGridViewTextBoxColumn";
-            this.teamnameDataGridViewTextBoxColumn.Width = 125;
+            this.teamsBindingSource1.DataMember = "Teams";
+            this.teamsBindingSource1.DataSource = this.finalprojectDataSet9;
             // 
-            // memberidDataGridViewTextBoxColumn
+            // finalprojectDataSet9
             // 
-            this.memberidDataGridViewTextBoxColumn.DataPropertyName = "member_id";
-            this.memberidDataGridViewTextBoxColumn.HeaderText = "member_id";
-            this.memberidDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.memberidDataGridViewTextBoxColumn.Name = "memberidDataGridViewTextBoxColumn";
-            this.memberidDataGridViewTextBoxColumn.Width = 125;
+            this.finalprojectDataSet9.DataSetName = "finalprojectDataSet9";
+            this.finalprojectDataSet9.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // teamsTableAdapter1
+            // 
+            this.teamsTableAdapter1.ClearBeforeFill = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Brown;
+            this.label1.Location = new System.Drawing.Point(222, 49);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(62, 23);
+            this.label1.TabIndex = 31;
+            this.label1.Text = "Teams";
+            // 
+            // btn_viewTeam
+            // 
+            this.btn_viewTeam.BackColor = System.Drawing.Color.Brown;
+            this.btn_viewTeam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_viewTeam.ForeColor = System.Drawing.Color.LightCoral;
+            this.btn_viewTeam.Location = new System.Drawing.Point(225, 484);
+            this.btn_viewTeam.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_viewTeam.Name = "btn_viewTeam";
+            this.btn_viewTeam.Size = new System.Drawing.Size(78, 25);
+            this.btn_viewTeam.TabIndex = 32;
+            this.btn_viewTeam.Text = "View Team";
+            this.btn_viewTeam.UseVisualStyleBackColor = false;
+            this.btn_viewTeam.Click += new System.EventHandler(this.btn_viewTeam_Click);
+            // 
+            // btn_joinTeam
+            // 
+            this.btn_joinTeam.BackColor = System.Drawing.Color.Brown;
+            this.btn_joinTeam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_joinTeam.ForeColor = System.Drawing.Color.LightCoral;
+            this.btn_joinTeam.Location = new System.Drawing.Point(306, 484);
+            this.btn_joinTeam.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_joinTeam.Name = "btn_joinTeam";
+            this.btn_joinTeam.Size = new System.Drawing.Size(78, 25);
+            this.btn_joinTeam.TabIndex = 33;
+            this.btn_joinTeam.Text = "Join Team";
+            this.btn_joinTeam.UseVisualStyleBackColor = false;
+            this.btn_joinTeam.Click += new System.EventHandler(this.btn_joinTeam_Click);
+            // 
+            // txtbox_createTeam
+            // 
+            this.txtbox_createTeam.Location = new System.Drawing.Point(32, 231);
+            this.txtbox_createTeam.Name = "txtbox_createTeam";
+            this.txtbox_createTeam.Size = new System.Drawing.Size(158, 20);
+            this.txtbox_createTeam.TabIndex = 34;
+            // 
+            // dataGridView_Members
+            // 
+            this.dataGridView_Members.AllowUserToAddRows = false;
+            this.dataGridView_Members.AllowUserToDeleteRows = false;
+            this.dataGridView_Members.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_Members.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.username,
+            this.first_name,
+            this.last_name});
+            this.dataGridView_Members.Location = new System.Drawing.Point(498, 75);
+            this.dataGridView_Members.Name = "dataGridView_Members";
+            this.dataGridView_Members.ReadOnly = true;
+            this.dataGridView_Members.Size = new System.Drawing.Size(343, 359);
+            this.dataGridView_Members.TabIndex = 35;
+            // 
+            // usersBindingSource
+            // 
+            this.usersBindingSource.DataMember = "users";
+            this.usersBindingSource.DataSource = this.finalprojectDataSet11;
+            // 
+            // finalprojectDataSet11
+            // 
+            this.finalprojectDataSet11.DataSetName = "finalprojectDataSet11";
+            this.finalprojectDataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // finalprojectDataSet10
+            // 
+            this.finalprojectDataSet10.DataSetName = "finalprojectDataSet10";
+            this.finalprojectDataSet10.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // teamsBindingSource2
+            // 
+            this.teamsBindingSource2.DataMember = "Teams";
+            this.teamsBindingSource2.DataSource = this.finalprojectDataSet10;
+            // 
+            // teamsTableAdapter2
+            // 
+            this.teamsTableAdapter2.ClearBeforeFill = true;
+            // 
+            // usersTableAdapter
+            // 
+            this.usersTableAdapter.ClearBeforeFill = true;
+            // 
+            // btn_createTeam
+            // 
+            this.btn_createTeam.BackColor = System.Drawing.Color.Brown;
+            this.btn_createTeam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_createTeam.ForeColor = System.Drawing.Color.LightCoral;
+            this.btn_createTeam.Location = new System.Drawing.Point(65, 266);
+            this.btn_createTeam.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_createTeam.Name = "btn_createTeam";
+            this.btn_createTeam.Size = new System.Drawing.Size(95, 25);
+            this.btn_createTeam.TabIndex = 36;
+            this.btn_createTeam.Text = "Create Team";
+            this.btn_createTeam.UseVisualStyleBackColor = false;
+            this.btn_createTeam.Click += new System.EventHandler(this.btn_createTeam_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Brown;
+            this.label2.Location = new System.Drawing.Point(494, 49);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(85, 23);
+            this.label2.TabIndex = 37;
+            this.label2.Text = "Members";
+            // 
+            // btn_LeaveTeam
+            // 
+            this.btn_LeaveTeam.BackColor = System.Drawing.Color.Brown;
+            this.btn_LeaveTeam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_LeaveTeam.ForeColor = System.Drawing.Color.LightCoral;
+            this.btn_LeaveTeam.Location = new System.Drawing.Point(387, 484);
+            this.btn_LeaveTeam.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_LeaveTeam.Name = "btn_LeaveTeam";
+            this.btn_LeaveTeam.Size = new System.Drawing.Size(82, 25);
+            this.btn_LeaveTeam.TabIndex = 38;
+            this.btn_LeaveTeam.Text = "Leave Team";
+            this.btn_LeaveTeam.UseVisualStyleBackColor = false;
+            this.btn_LeaveTeam.Click += new System.EventHandler(this.btn_LeaveTeam_Click);
+            // 
+            // team_name
+            // 
+            this.team_name.DataPropertyName = "team_name";
+            this.team_name.HeaderText = "team_name";
+            this.team_name.Name = "team_name";
+            this.team_name.ReadOnly = true;
+            this.team_name.Width = 200;
+            // 
+            // member_id
+            // 
+            this.member_id.DataPropertyName = "member_id";
+            this.member_id.HeaderText = "member_id";
+            this.member_id.Name = "member_id";
+            this.member_id.ReadOnly = true;
+            this.member_id.Visible = false;
+            // 
+            // btn_updateTeam
+            // 
+            this.btn_updateTeam.BackColor = System.Drawing.Color.Brown;
+            this.btn_updateTeam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_updateTeam.ForeColor = System.Drawing.Color.LightCoral;
+            this.btn_updateTeam.Location = new System.Drawing.Point(302, 439);
+            this.btn_updateTeam.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_updateTeam.Name = "btn_updateTeam";
+            this.btn_updateTeam.Size = new System.Drawing.Size(88, 25);
+            this.btn_updateTeam.TabIndex = 39;
+            this.btn_updateTeam.Text = "Update Teams";
+            this.btn_updateTeam.UseVisualStyleBackColor = false;
+            this.btn_updateTeam.Click += new System.EventHandler(this.btn_updateTeam_Click);
+            // 
+            // username
+            // 
+            this.username.DataPropertyName = "username";
+            this.username.HeaderText = "username";
+            this.username.Name = "username";
+            this.username.ReadOnly = true;
+            // 
+            // first_name
+            // 
+            this.first_name.DataPropertyName = "first_name";
+            this.first_name.HeaderText = "first_name";
+            this.first_name.Name = "first_name";
+            this.first_name.ReadOnly = true;
+            // 
+            // last_name
+            // 
+            this.last_name.DataPropertyName = "last_name";
+            this.last_name.HeaderText = "last_name";
+            this.last_name.Name = "last_name";
+            this.last_name.ReadOnly = true;
             // 
             // UserControlTeams
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MistyRose;
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.btn_updateTeam);
+            this.Controls.Add(this.btn_LeaveTeam);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.btn_createTeam);
+            this.Controls.Add(this.dataGridView_Members);
+            this.Controls.Add(this.txtbox_createTeam);
+            this.Controls.Add(this.btn_joinTeam);
+            this.Controls.Add(this.btn_viewTeam);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.dataGridView_Teams);
             this.ForeColor = System.Drawing.Color.LightCoral;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "UserControlTeams";
-            this.Size = new System.Drawing.Size(1147, 652);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.finalprojectDataSet6)).EndInit();
+            this.Size = new System.Drawing.Size(860, 530);
             ((System.ComponentModel.ISupportInitialize)(this.teamsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.finalprojectDataSet6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Teams)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.teamsBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.finalprojectDataSet9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Members)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.finalprojectDataSet11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.finalprojectDataSet10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.teamsBindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn teamnameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn memberidDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource teamsBindingSource;
         private finalprojectDataSet6 finalprojectDataSet6;
         private finalprojectDataSet6TableAdapters.TeamsTableAdapter teamsTableAdapter;
+        private System.Windows.Forms.DataGridView dataGridView_Teams;
+        private System.Windows.Forms.BindingSource teamsBindingSource1;
+        private finalprojectDataSet9 finalprojectDataSet9;
+        private finalprojectDataSet9TableAdapters.TeamsTableAdapter teamsTableAdapter1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btn_viewTeam;
+        private System.Windows.Forms.Button btn_joinTeam;
+        private System.Windows.Forms.TextBox txtbox_createTeam;
+        private System.Windows.Forms.DataGridView dataGridView_Members;
+        private System.Windows.Forms.BindingSource usersBindingSource;
+        private finalprojectDataSet11 finalprojectDataSet11;
+        private finalprojectDataSet10 finalprojectDataSet10;
+        private System.Windows.Forms.BindingSource teamsBindingSource2;
+        private finalprojectDataSet10TableAdapters.TeamsTableAdapter teamsTableAdapter2;
+        private finalprojectDataSet11TableAdapters.usersTableAdapter usersTableAdapter;
+        private System.Windows.Forms.Button btn_createTeam;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btn_LeaveTeam;
+        private System.Windows.Forms.DataGridViewTextBoxColumn team_name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn member_id;
+        private System.Windows.Forms.Button btn_updateTeam;
+        private System.Windows.Forms.DataGridViewTextBoxColumn username;
+        private System.Windows.Forms.DataGridViewTextBoxColumn first_name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn last_name;
     }
 }

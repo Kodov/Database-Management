@@ -38,7 +38,7 @@
             this.Delete_Account.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Delete_Account.Font = new System.Drawing.Font("Impact", 18F);
             this.Delete_Account.ForeColor = System.Drawing.Color.LightCoral;
-            this.Delete_Account.Location = new System.Drawing.Point(690, 428);
+            this.Delete_Account.Location = new System.Drawing.Point(386, 265);
             this.Delete_Account.Name = "Delete_Account";
             this.Delete_Account.Size = new System.Drawing.Size(170, 43);
             this.Delete_Account.TabIndex = 7;
@@ -52,7 +52,7 @@
             this.Logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Logout.Font = new System.Drawing.Font("Impact", 18F);
             this.Logout.ForeColor = System.Drawing.Color.LightCoral;
-            this.Logout.Location = new System.Drawing.Point(690, 354);
+            this.Logout.Location = new System.Drawing.Point(386, 191);
             this.Logout.Name = "Logout";
             this.Logout.Size = new System.Drawing.Size(170, 43);
             this.Logout.TabIndex = 8;
